@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<html lang="fr" data-lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centre Optique Chefchaouen — Opticien · Optométriste · Contactologue</title>
+<meta name="description" content="Centre Optique Chefchaouen — opticien, optométriste et adaptation de lentilles de contact. Av. Allal El Fassi, Garage N°27, Chefchaouen.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --indigo:#152C46;
+    --medina:#2C6187;
+    --sky:#7FA8C4;
+    --powder:#DCE8EF;
+    --whitewash:#F6F5F0;
+    --brass:#B68A4E;
+    --brass-dark:#8E6A38;
+    --whatsapp:#25D366;
+    --ink:#141B22;
+    --ink-soft:#3E4A54;
+    --line:rgba(20,27,34,0.12);
+    --shadow: 0 20px 45px rgba(21,44,70,0.16);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--whitewash);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  h1,h2,h3,.display{font-family:'Fraunces',serif;font-weight:600;letter-spacing:-0.01em;margin:0;}
+  .eyebrow{font-family:'Inter',sans-serif;font-size:0.72rem;letter-spacing:0.22em;text-transform:uppercase;color:var(--brass-dark);font-weight:600;}
+  [data-lang="fr"] .en{display:none;}
+  [data-lang="en"] .fr{display:none;}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 32px;}
+  section{position:relative;}
+
+  /* ---------- top utility bar ---------- */
+  .topbar{background:var(--indigo);color:#CFE0EA;font-size:0.78rem;}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 32px;gap:20px;}
+  .topbar .left{display:flex;gap:22px;align-items:center;flex-wrap:wrap;}
+  .topbar a{text-decoration:none;color:#CFE0EA;display:flex;align-items:center;gap:6px;}
+  .topbar a:hover{color:#fff;}
+  .topbar svg{width:13px;height:13px;flex-shrink:0;}
+  .topbar .lang-toggle button{color:#CFE0EA;}
+  .topbar .lang-toggle button.active{background:#fff;color:var(--indigo);}
+  .topbar .lang-toggle{border-color:rgba(255,255,255,0.4);}
+
+  /* ---------- nav ---------- */
+  header.site-nav{position:sticky;top:0;z-index:50;background:rgba(246,245,240,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);}
+  .nav-inner{max-width:1180px;margin:0 auto;padding:14px 32px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:var(--indigo);}
+  .brand svg{width:36px;height:36px;flex-shrink:0;}
+  .brand-name{font-family:'Fraunces',serif;font-weight:600;font-size:1.05rem;line-height:1.05;}
+  .brand-name small{display:block;font-family:'Inter',sans-serif;font-weight:500;font-size:0.6rem;letter-spacing:0.16em;text-transform:uppercase;color:var(--brass-dark);margin-top:3px;}
+  nav.links{display:flex;gap:28px;font-size:0.88rem;font-weight:500;}
+  nav.links a{text-decoration:none;color:var(--ink-soft);position:relative;padding:4px 0;}
+  nav.links a:hover{color:var(--medina);}
+  nav.links a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--brass);transition:width .25s ease;}
+  nav.links a:hover::after{width:100%;}
+  .nav-right{display:flex;align-items:center;gap:12px;}
+  .lang-toggle{display:flex;border:1px solid var(--indigo);border-radius:999px;overflow:hidden;font-size:0.7rem;font-weight:700;letter-spacing:0.05em;}
+  .lang-toggle button{border:0;background:transparent;padding:6px 12px;cursor:pointer;color:var(--indigo);font-family:inherit;}
+  .lang-toggle button.active{background:var(--indigo);color:#fff;}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 20px;border-radius:999px;text-decoration:none;font-weight:600;font-size:0.84rem;white-space:nowrap;transition:transform .2s ease, box-shadow .2s ease;border:0;cursor:pointer;font-family:inherit;}
+  .btn:hover{transform:translateY(-2px);}
+  .btn-dark{background:var(--indigo);color:#fff;}
+  .btn-brass{background:var(--brass);color:#fff;box-shadow:0 8px 18px rgba(182,138,78,0.35);}
+  .btn-whatsapp{background:var(--whatsapp);color:#fff;box-shadow:0 8px 18px rgba(37,211,102,0.35);}
+  .btn-ghost-dark{background:transparent;color:var(--indigo);border:1px solid var(--indigo);}
+  .btn svg{width:15px;height:15px;}
+
+  /* ---------- hero ---------- */
+  .hero{padding:64px 0 0;}
+  .hero .wrap{display:grid;grid-template-columns:1.05fr 0.95fr;gap:56px;align-items:center;}
+  .hero .eyebrow{color:var(--brass-dark);}
+  .hero h1{font-size:clamp(2.1rem,4.4vw,3.4rem);color:var(--indigo);line-height:1.06;margin-top:14px;}
+  .hero .subline{font-family:'Fraunces',serif;font-style:italic;font-weight:450;font-size:1.05rem;color:var(--medina);margin-top:12px;}
+  .hero p.lead{margin-top:18px;max-width:46ch;font-size:1rem;line-height:1.65;color:var(--ink-soft);}
+  .hero-cta{display:flex;gap:14px;margin-top:32px;flex-wrap:wrap;}
+  .hero-photo{position:relative;border-radius:28px;overflow:hidden;box-shadow:var(--shadow);aspect-ratio:6/5;}
+  .hero-photo img{width:100%;height:100%;object-fit:cover;}
+  .hero-photo::after{content:"";position:absolute;inset:0;border-radius:28px;box-shadow:inset 0 0 0 1px rgba(255,255,255,0.25);}
+
+  /* ---------- feature strip ---------- */
+  .feature-strip{background:var(--indigo);margin-top:56px;}
+  .feature-strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);padding:26px 32px;}
+  .feature-strip .item{display:flex;align-items:center;gap:12px;padding:6px 20px;border-left:1px solid rgba(255,255,255,0.14);}
+  .feature-strip .item:first-child{border-left:none;}
+  .feature-strip .item svg{width:26px;height:26px;flex-shrink:0;color:var(--sky);}
+  .feature-strip .item .t1{color:#fff;font-weight:600;font-size:0.86rem;}
+  .feature-strip .item .t2{color:#9FB6C6;font-size:0.72rem;margin-top:2px;}
+
+  /* ---------- statistics ---------- */
+  .stats{background:var(--whitewash);padding:80px 0;}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center;}
+  .stat-item{display:flex;flex-direction:column;align-items:center;}
+  .stat-number{font-family:'Fraunces',serif;font-size:2.8rem;font-weight:600;color:var(--brass);line-height:1;}
+  .stat-label{font-size:0.92rem;color:var(--ink-soft);margin-top:8px;font-weight:500;}
+
+  /* ---------- section heads ---------- */
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 48px;}
+  .sec-head h2{font-size:clamp(1.7rem,3vw,2.3rem);color:var(--indigo);margin-top:12px;}
+  .sec-head p{color:var(--ink-soft);margin-top:14px;line-height:1.65;}
+  .sec-head.on-dark h2{color:#fff;}
+  .sec-head.on-dark p{color:#C7D6E1;}
+  .sec-head.on-dark .eyebrow{color:var(--sky);}
+
+  /* ---------- services grid (6) ---------- */
+  .services{padding:96px 0 100px;}
+  .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+  .service-tile{border:1px solid var(--line);border-radius:18px;padding:28px 26px;background:#fff;transition:border-color .25s ease, box-shadow .25s ease, transform .25s ease;}
+  .service-tile:hover{border-color:var(--brass);box-shadow:var(--shadow);transform:translateY(-3px);}
+  .service-tile .ic{width:44px;height:44px;border-radius:12px;background:var(--powder);display:flex;align-items:center;justify-content:center;color:var(--medina);margin-bottom:16px;}
+  .service-tile .ic svg{width:22px;height:22px;}
+  .service-tile h3{font-size:1.02rem;color:var(--indigo);}
+  .service-tile p{color:var(--ink-soft);font-size:0.86rem;line-height:1.55;margin-top:8px;}
+
+  /* ---------- why us (dark band) ---------- */
+  .why-us{background:var(--indigo);padding:80px 0;}
+  .why-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;}
+  .why-item{padding:0 14px;text-align:left;}
+  .why-item .ic{width:40px;height:40px;border-radius:10px;background:rgba(255,255,255,0.08);display:flex;align-items:center;justify-content:center;color:var(--brass);margin-bottom:14px;}
+  .why-item .ic svg{width:20px;height:20px;}
+  .why-item h3{font-size:0.92rem;color:#fff;font-family:'Inter',sans-serif;font-weight:600;}
+  .why-item p{color:#B9CBD8;font-size:0.8rem;line-height:1.5;margin-top:8px;}
+
+  /* ---------- collections ---------- */
+  .collections{padding:96px 0 100px;}
+  .coll-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;}
+  .coll-card{position:relative;border-radius:18px;overflow:hidden;aspect-ratio:3/4;box-shadow:var(--shadow);}
+  .coll-card img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease;}
+  .coll-card:hover img{transform:scale(1.06);}
+  .coll-card::before{content:"";position:absolute;inset:0;background:linear-gradient(0deg, rgba(10,20,32,0.88) 0%, rgba(10,20,32,0.15) 55%, transparent 75%);}
+  .coll-card .txt{position:absolute;left:0;right:0;bottom:0;padding:20px;color:#fff;}
+  .coll-card h3{font-size:1.02rem;color:#fff;}
+  .coll-card p{font-size:0.78rem;color:#D9E4EA;margin-top:4px;}
+
+  /* ---------- team ---------- */
+  .team{padding:96px 0 100px;}
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;}
+  .team-card{background:#fff;border-radius:20px;overflow:hidden;box-shadow:var(--shadow);transition:transform .25s ease, box-shadow .25s ease;}
+  .team-card:hover{transform:translateY(-4px);box-shadow:0 24px 50px rgba(21,44,70,0.2);}
+  .team-photo{aspect-ratio:4/5;overflow:hidden;}
+  .team-photo img{width:100%;height:100%;object-fit:cover;}
+  .team-info{padding:22px 20px;text-align:center;}
+  .team-info h3{font-size:1.08rem;color:var(--indigo);margin-bottom:6px;}
+  .team-info p{font-size:0.84rem;color:var(--ink-soft);line-height:1.5;}
+
+  /* ---------- reviews CTA ---------- */
+  .reviews{padding:0 0 100px;}
+  .review-card{background:var(--powder);border-radius:24px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;}
+  .review-card .txt h2{font-size:clamp(1.4rem,2.4vw,1.9rem);color:var(--indigo);}
+  .review-card .txt p{color:var(--ink-soft);margin-top:10px;max-width:44ch;line-height:1.6;}
+  .review-card .stars{display:flex;gap:4px;margin-bottom:10px;}
+  .review-card .stars svg{width:18px;height:18px;color:var(--brass);}
+
+  /* ---------- booking + map ---------- */
+  .booking{padding:0 0 100px;}
+  .booking-card{display:grid;grid-template-columns:1fr 1.1fr;border-radius:24px;overflow:hidden;box-shadow:var(--shadow);}
+  .booking-form{background:var(--indigo);color:#fff;padding:48px 44px;}
+  .booking-form .eyebrow{color:var(--sky);}
+  .booking-form h2{color:#fff;font-size:clamp(1.4rem,2.4vw,1.8rem);margin-top:12px;}
+  .booking-form p{color:#C7D6E1;margin-top:12px;font-size:0.9rem;line-height:1.55;}
+  .field-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;}
+  .field{display:flex;flex-direction:column;gap:6px;}
+  .field label{font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;color:#9FB6C6;}
+  .field input,.field select,.field textarea{
+    background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.2);border-radius:10px;
+    padding:11px 13px;color:#fff;font-family:inherit;font-size:0.88rem;
+  }
+  .field textarea{resize:vertical;min-height:70px;}
+  .field input::placeholder,.field textarea::placeholder{color:#7C93A3;}
+  .booking-form .btn{margin-top:22px;width:100%;justify-content:center;}
+  .booking-form .note{font-size:0.74rem;color:#8FA6B7;margin-top:14px;line-height:1.5;}
+
+  .booking-map{position:relative;background:var(--powder);}
+  .booking-map .store-shot{height:210px;overflow:hidden;}
+  .booking-map .store-shot img{width:100%;height:100%;object-fit:cover;}
+  .booking-map iframe{width:100%;height:calc(100% - 210px);border:0;display:block;min-height:220px;}
+  .booking-map .info-strip{position:absolute;left:20px;right:20px;top:230px;background:#fff;border-radius:14px;padding:16px 18px;box-shadow:var(--shadow);display:flex;gap:22px;flex-wrap:wrap;z-index:5;}
+  .booking-map .info-strip .row{display:flex;align-items:center;gap:8px;font-size:0.82rem;font-weight:500;color:var(--indigo);}
+  .booking-map .info-strip svg{width:15px;height:15px;color:var(--brass);flex-shrink:0;}
+
+  /* ---------- footer ---------- */
+  footer{background:var(--indigo);color:#C7D6E1;padding:64px 0 28px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:36px;}
+  .footer-grid h4{color:#fff;font-family:'Inter',sans-serif;font-size:0.76rem;letter-spacing:0.1em;text-transform:uppercase;margin-bottom:16px;}
+  .footer-grid .fbrand{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .footer-grid .fbrand svg{width:28px;height:28px;}
+  .footer-grid .fbrand span{color:#fff;font-family:'Fraunces',serif;font-weight:600;}
+  .footer-grid p.desc{font-size:0.85rem;color:#9FB6C6;line-height:1.6;max-width:32ch;}
+  .footer-grid nav{display:flex;flex-direction:column;gap:10px;font-size:0.85rem;}
+  .footer-grid nav a{text-decoration:none;color:#C7D6E1;}
+  .footer-grid nav a:hover{color:#fff;}
+  .footer-grid .contact-lines{display:flex;flex-direction:column;gap:10px;font-size:0.85rem;}
+  .newsletter-form{display:flex;gap:8px;margin-top:14px;}
+  .newsletter-form input{flex:1;border-radius:999px;border:1px solid rgba(255,255,255,0.25);background:rgba(255,255,255,0.06);padding:10px 16px;color:#fff;font-family:inherit;font-size:0.84rem;}
+  .newsletter-form input::placeholder{color:#7C93A3;}
+  .newsletter-form button{border-radius:999px;border:0;background:var(--brass);color:#fff;padding:10px 18px;font-weight:600;font-size:0.82rem;cursor:pointer;}
+  .footer-bottom{margin-top:44px;padding-top:22px;border-top:1px solid rgba(255,255,255,0.14);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;font-size:0.78rem;color:#8FA6B7;}
+  .footer-bottom a{text-decoration:none;color:#8FA6B7;}
+  .footer-bottom a:hover{color:#fff;}
+
+  .wa-float{position:fixed;right:22px;bottom:22px;width:54px;height:54px;border-radius:50%;background:var(--whatsapp);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(37,211,102,0.45);z-index:60;text-decoration:none;}
+  .wa-float svg{width:26px;height:26px;}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:980px){
+    .topbar .left{display:none;}
+    nav.links{display:none;}
+    .hero .wrap{grid-template-columns:1fr;}
+    .hero-photo{order:-1;aspect-ratio:16/9;}
+    .feature-strip .wrap{grid-template-columns:repeat(2,1fr);}
+    .feature-strip .item:nth-child(3){border-left:none;}
+    .stats-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
+    .stat-number{font-size:2.2rem;}
+    .services-grid{grid-template-columns:1fr 1fr;}
+    .why-grid{grid-template-columns:repeat(2,1fr);}
+    .coll-grid{grid-template-columns:1fr 1fr;}
+    .team-grid{grid-template-columns:1fr 1fr;}
+    .booking-card{grid-template-columns:1fr;}
+    .booking-map{min-height:420px;}
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media (max-width:600px){
+    .wrap{padding:0 20px;}
+    .stats-grid{grid-template-columns:1fr;gap:20px;}
+    .stat-number{font-size:2rem;}
+    .services-grid{grid-template-columns:1fr;}
+    .why-grid{grid-template-columns:1fr;}
+    .coll-grid{grid-template-columns:1fr;}
+    .team-grid{grid-template-columns:1fr;}
+    .field-row{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .review-card{padding:32px 24px;}
+    .booking-map .info-strip{flex-direction:column;gap:10px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================== TOP BAR ===================== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="left">
+      <a href="#contact"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-6.2 7-12A7 7 0 0 0 5 10c0 5.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg><span class="fr">Av. Allal El Fassi, Chefchaouen</span><span class="en">Av. Allal El Fassi, Chefchaouen</span></a>
+      <a href="tel:+212539883551"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="currentColor" stroke-width="1.8"/></svg>05 39 88 35 51</a>
+      <a href="https://wa.me/212714082936" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 14.5c-.3-.15-1.7-.85-2-.95-.27-.1-.46-.15-.66.15-.2.3-.76.95-.93 1.15-.17.2-.34.22-.63.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.2-.24-.57-.48-.5-.66-.5-.17 0-.37-.02-.56-.02-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.5.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.7-.7 1.94-1.37.24-.68.24-1.25.17-1.37-.07-.12-.27-.2-.57-.35Z" fill="currentColor"/><circle cx="12" cy="12" r="9.2" stroke="currentColor" stroke-width="1.6"/></svg>WhatsApp</a>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" data-set-lang="fr" class="active">FR</button>
+      <button type="button" data-set-lang="en">EN</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== NAV ===================== -->
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="#top" class="brand">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M4 32C13 18 22 12 32 12C42 12 51 18 60 32C51 46 42 52 32 52C22 52 13 46 4 32Z" stroke="#152C46" stroke-width="2.4"/>
+        <circle cx="32" cy="32" r="12" fill="#152C46"/>
+        <path d="M32 22 A10 10 0 0 1 40 38" stroke="#F6F5F0" stroke-width="1.1" fill="none"/>
+        <circle cx="35" cy="28" r="2.4" fill="#F6F5F0"/>
+      </svg>
+      <span class="brand-name">Centre Optique<small>Chefchaouen</small></span>
+    </a>
+    <nav class="links">
+      <a href="#top"><span class="fr">Accueil</span><span class="en">Home</span></a>
+      <a href="#services">Services</a>
+      <a href="#collections"><span class="fr">Collections</span><span class="en">Collections</span></a>
+      <a href="#galerie"><span class="fr">Galerie</span><span class="en">Gallery</span></a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-right">
+      <a class="btn btn-dark" href="tel:+212539883551">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="3" width="16" height="18" rx="2.5" stroke="currentColor" stroke-width="1.8"/><path d="M9 7h6M9 12h6M9 17h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <span class="fr">Prendre rendez-vous</span><span class="en">Book a visit</span>
+      </a>
+      <a class="btn btn-brass" href="https://wa.me/212714082936" target="_blank" rel="noopener">WhatsApp</a>
+    </div>
+  </div>
+</header>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Centre Optique Chefchaouen</p>
+      <h1><span class="fr">Votre vision mérite le meilleur</span><span class="en">Your eyesight deserves the best</span></h1>
+      <p class="subline"><span class="fr">Opticien · Optométriste · Contactologue</span><span class="en">Optician · Optometrist · Contact Lens Specialist</span></p>
+      <p class="lead">
+        <span class="fr">Des examens précis, un large choix de montures et des conseils personnalisés, dans notre boutique de l'Avenue Allal El Fassi au cœur de Chefchaouen.</span>
+        <span class="en">Precise exams, a wide choice of frames and personal advice, from our shop on Avenue Allal El Fassi in the heart of Chefchaouen.</span>
+      </p>
+      <div class="hero-cta">
+        <a class="btn btn-brass" href="tel:+212539883551">
+          <span class="fr">Prendre rendez-vous</span><span class="en">Book a visit</span>
+        </a>
+        <a class="btn btn-ghost-dark" href="#contact">
+          <span class="fr">Nous trouver</span><span class="en">Find us</span>
+        </a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="Cabine_examen.jpeg" alt="Cabine d'examen — Centre Optique Chefchaouen">
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FEATURE STRIP ===================== -->
+<div class="feature-strip">
+  <div class="wrap">
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.6"/></svg>
+      <div><div class="t1"><span class="fr">Examen précis</span><span class="en">Precise exam</span></div><div class="t2"><span class="fr">Équipement professionnel</span><span class="en">Professional equipment</span></div></div>
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4 15a3 3 0 1 0 6 0 3 3 0 0 0-6 0Zm10 0a3 3 0 1 0 6 0 3 3 0 0 0-6 0Zm-4-1h0" stroke="currentColor" stroke-width="1.6"/><path d="M10 14h4M4 12l2-6h2m10 6-2-6h-2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <div><div class="t1"><span class="fr">Marques reconnues</span><span class="en">Trusted brands</span></div><div class="t2"><span class="fr">Boss, Carrera, Biaggi...</span><span class="en">Boss, Carrera, Biaggi...</span></div></div>
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.6"/><path d="M12 3v2.5M12 18.5V21M21 12h-2.5M5.5 12H3M18 6l-1.6 1.6M7.6 16.4 6 18M18 18l-1.6-1.6M7.6 7.6 6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <div><div class="t1"><span class="fr">Adaptation sur mesure</span><span class="en">Custom fitting</span></div><div class="t2"><span class="fr">Lentilles souples &amp; rigides</span><span class="en">Soft &amp; rigid lenses</span></div></div>
+    </div>
+    <div class="item">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/></svg>
+      <div><div class="t1"><span class="fr">Accueil personnalisé</span><span class="en">Personal welcome</span></div><div class="t2"><span class="fr">À votre écoute</span><span class="en">Here to listen</span></div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ===================== STATISTICS ===================== -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-number">500+</div>
+        <div class="stat-label"><span class="fr">Clients satisfaits</span><span class="en">Satisfied clients</span></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">15+</div>
+        <div class="stat-label"><span class="fr">Années d'expérience</span><span class="en">Years of experience</span></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">50+</div>
+        <div class="stat-label"><span class="fr">Marques disponibles</span><span class="en">Brands available</span></div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-number">100%</div>
+        <div class="stat-label"><span class="fr">Engagement qualité</span><span class="en">Quality commitment</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SERVICES ===================== -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="fr">Nos services</span><span class="en">Our services</span></p>
+      <h2><span class="fr">Un service complet pour votre vision</span><span class="en">Complete care for your eyesight</span></h2>
+      <p><span class="fr">De l'examen de la vue à l'ajustement final de votre monture, chaque étape est prise en charge par notre équipe.</span><span class="en">From the eye exam to the final fitting of your frame, every step is handled by our team.</span></p>
+    </div>
+
+    <div class="services-grid">
+      <div class="service-tile">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3.2" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3><span class="fr">Examen de la vue</span><span class="en">Eye exam</span></h3>
+        <p><span class="fr">Mesure précise de votre correction par un réfracteur professionnel.</span><span class="en">Precise measurement of your correction with professional refraction equipment.</span></p>
+      </div>
+      <div class="service-tile">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="7" cy="12" r="3.6" stroke="currentColor" stroke-width="1.7"/><circle cx="17" cy="12" r="3.6" stroke="currentColor" stroke-width="1.7"/><path d="M10.6 12h2.8" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3><span class="fr">Lunettes optiques</span><span class="en">Eyeglasses</span></h3>
+        <p><span class="fr">Un large choix de montures pour homme, femme et enfant.</span><span class="en">A wide choice of frames for men, women and children.</span></p>
+      </div>
+      <div class="service-tile">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="4.2" stroke="currentColor" stroke-width="1.7"/><path d="M12 3v2.4M12 18.6V21M21 12h-2.4M5.4 12H3M18.4 5.6l-1.7 1.7M7.3 16.7 5.6 18.4M18.4 18.4l-1.7-1.7M7.3 7.3 5.6 5.6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3><span class="fr">Lunettes solaires</span><span class="en">Sunglasses</span></h3>
+        <p><span class="fr">Protection UV et style, avec les plus grandes marques.</span><span class="en">UV protection and style, with the biggest brands.</span></p>
+      </div>
+      <div class="service-tile">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3><span class="fr">Lentilles de contact</span><span class="en">Contact lenses</span></h3>
+        <p><span class="fr">Adaptation sur mesure et suivi pour un confort optimal.</span><span class="en">Custom fitting and follow-up for optimal comfort.</span></p>
+      </div>
+      <div class="service-tile">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="8" r="3.4" stroke="currentColor" stroke-width="1.7"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg></div>
+        <h3><span class="fr">Lunettes enfants</span><span class="en">Children's eyewear</span></h3>
+        <p><span class="fr">Des montures adaptées et résistantes pour les plus jeunes.</span><span class="en">Sturdy, well-fitted frames for the youngest.</span></p>
+      </div>
+      <div class="service-tile">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.7 6.3a3 3 0 0 0-4.2 4.2L4 17l3 3 6.5-6.5a3 3 0 0 0 4.2-4.2l-2 2-2-1-1-2 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></svg></div>
+        <h3><span class="fr">Entretien &amp; ajustement</span><span class="en">Care &amp; adjustment</span></h3>
+        <p><span class="fr">Ajustement, nettoyage et petites réparations de vos lunettes.</span><span class="en">Adjustment, cleaning and minor repairs for your glasses.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WHY US ===================== -->
+<section class="why-us">
+  <div class="wrap">
+    <div class="sec-head on-dark">
+      <p class="eyebrow"><span class="fr">Pourquoi nous choisir ?</span><span class="en">Why choose us?</span></p>
+      <h2><span class="fr">Notre engagement pour votre satisfaction</span><span class="en">Our commitment to your satisfaction</span></h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 3 3 7v6c0 4.5 3.8 7.6 9 8 5.2-.4 9-3.5 9-8V7l-9-4Z" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3><span class="fr">Expertise</span><span class="en">Expertise</span></h3>
+        <p><span class="fr">Opticien, optométriste et contactologue qualifiés à votre service.</span><span class="en">Qualified optician, optometrist and contact lens specialist.</span></p>
+      </div>
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><rect x="4" y="9" width="16" height="10" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 9V6a4 4 0 0 1 8 0v3" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3><span class="fr">Équipement moderne</span><span class="en">Modern equipment</span></h3>
+        <p><span class="fr">Un réfracteur professionnel pour des mesures fiables.</span><span class="en">Professional refraction equipment for reliable measurements.</span></p>
+      </div>
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5 21v-2a5 5 0 0 1 5-5h4a5 5 0 0 1 5 5v2" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3><span class="fr">Conseil personnalisé</span><span class="en">Personal advice</span></h3>
+        <p><span class="fr">Nous prenons le temps de comprendre vos besoins.</span><span class="en">We take the time to understand what you need.</span></p>
+      </div>
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="8" cy="9" r="3.4" stroke="currentColor" stroke-width="1.7"/><circle cx="16" cy="9" r="3.4" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3><span class="fr">Large choix</span><span class="en">Wide selection</span></h3>
+        <p><span class="fr">Des montures de grandes marques pour tous les styles.</span><span class="en">Frames from leading brands, for every style.</span></p>
+      </div>
+      <div class="why-item">
+        <div class="ic"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-6.2 7-12A7 7 0 0 0 5 10c0 5.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="10" r="2.6" stroke="currentColor" stroke-width="1.7"/></svg></div>
+        <h3><span class="fr">Proximité</span><span class="en">Convenient location</span></h3>
+        <p><span class="fr">Situés au cœur de Chefchaouen, facilement accessibles.</span><span class="en">In the heart of Chefchaouen, easy to reach.</span></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== COLLECTIONS ===================== -->
+<section class="collections" id="collections">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="fr">Nos collections</span><span class="en">Our collections</span></p>
+      <h2><span class="fr">Trouvez la collection qui vous ressemble</span><span class="en">Find the collection that suits you</span></h2>
+    </div>
+    <div class="coll-grid">
+      <a class="coll-card" href="tel:+212539883551">
+        <img src="produit_homme.jpeg" alt="Collection Homme">
+        <div class="txt"><h3><span class="fr">Collection Homme</span><span class="en">Men's Collection</span></h3><p><span class="fr">Style et élégance</span><span class="en">Style &amp; elegance</span></p></div>
+      </a>
+      <a class="coll-card" href="tel:+212539883551">
+        <img src="prduit_femme.jpeg" alt="Collection Femme">
+        <div class="txt"><h3><span class="fr">Collection Femme</span><span class="en">Women's Collection</span></h3><p><span class="fr">Tendance et raffinement</span><span class="en">Trend &amp; refinement</span></p></div>
+      </a>
+      <a class="coll-card" href="tel:+212539883551">
+        <img src="Lunettes_vue_solaires.jpeg" alt="Protection solaire">
+        <div class="txt"><h3><span class="fr">Protection solaire</span><span class="en">Sun Protection</span></h3><p><span class="fr">Style et protection UV</span><span class="en">Style &amp; UV protection</span></p></div>
+      </a>
+      <a class="coll-card" href="tel:+212539883551">
+        <img src="lentilles.jpeg" alt="Lentilles de contact">
+        <div class="txt"><h3><span class="fr">Lentilles de contact</span><span class="en">Contact Lenses</span></h3><p><span class="fr">Confort et liberté</span><span class="en">Comfort &amp; freedom</span></p></div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GOOGLE REVIEWS CTA ===================== -->
+<section class="reviews">
+  <div class="wrap">
+    <div class="review-card">
+      <div class="txt">
+        <div class="stars">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 5 1.3 7-6.3-3.4L5.7 21.4 7 14.4l-5-5 7-.9L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 5 1.3 7-6.3-3.4L5.7 21.4 7 14.4l-5-5 7-.9L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 5 1.3 7-6.3-3.4L5.7 21.4 7 14.4l-5-5 7-.9L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 5 1.3 7-6.3-3.4L5.7 21.4 7 14.4l-5-5 7-.9L12 2Z"/></svg>
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 6.5 7 .9-5 5 1.3 7-6.3-3.4L5.7 21.4 7 14.4l-5-5 7-.9L12 2Z"/></svg>
+        </div>
+        <h2><span class="fr">Ils nous font confiance</span><span class="en">Our customers trust us</span></h2>
+        <p><span class="fr">Découvrez les avis de nos clients sur notre fiche Google, et laissez le vôtre après votre visite.</span><span class="en">Read what our customers say on our Google listing, and leave your own after your visit.</span></p>
+      </div>
+      <a class="btn btn-dark" href="https://www.google.com/maps?q=Centre+Optique+Chefchaouen" target="_blank" rel="noopener">
+        <span class="fr">Voir les avis Google</span><span class="en">See Google reviews</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TEAM ===================== -->
+<section class="team" id="equipe">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="fr">Notre équipe</span><span class="en">Our team</span></p>
+      <h2><span class="fr">Des professionnels à votre service</span><span class="en">Professionals at your service</span></h2>
+      <p><span class="fr">Une équipe qualifiée et passionnée, prête à vous accompagner dans tous vos besoins visuels.</span><span class="en">A qualified and passionate team, ready to assist with all your visual needs.</span></p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="Cabine_examen.jpeg" alt="Équipe Centre Optique Chefchaouen">
+        </div>
+        <div class="team-info">
+          <h3><span class="fr">Notre équipe</span><span class="en">Our team</span></h3>
+          <p><span class="fr">Opticien · Optométriste · Contactologue</span><span class="en">Optician · Optometrist · Contact Lens Specialist</span></p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="facade.jpeg" alt="Équipe Centre Optique Chefchaouen">
+        </div>
+        <div class="team-info">
+          <h3><span class="fr">Accueil & Conseil</span><span class="en">Welcome & Advice</span></h3>
+          <p><span class="fr">À votre écoute pour vous guider</span><span class="en">Here to listen and guide you</span></p>
+        </div>
+      </div>
+      <div class="team-card">
+        <div class="team-photo">
+          <img src="produit_homme.jpeg" alt="Équipe Centre Optique Chefchaouen">
+        </div>
+        <div class="team-info">
+          <h3><span class="fr">Expertise technique</span><span class="en">Technical expertise</span></h3>
+          <p><span class="fr">Précision et qualité garantie</span><span class="en">Precision and guaranteed quality</span></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== GALLERY ===================== -->
+<section class="gallery" id="galerie" style="padding:0 0 100px;">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow"><span class="fr">À l'intérieur</span><span class="en">Inside the shop</span></p>
+      <h2><span class="fr">Une boutique pensée pour vous</span><span class="en">A shop designed around you</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+      <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
+        <img src="produit_homme.jpeg" alt="Présentoir de montures Homme" style="width:100%;height:100%;object-fit:cover;">
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Espace montures Homme</span><span class="en">Men's frame display</span></figcaption>
+      </figure>
+      <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
+        <img src="facade.jpeg" alt="Façade du magasin" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;">
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Notre façade, Av. Allal El Fassi</span><span class="en">Our storefront</span></figcaption>
+      </figure>
+      <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
+        <img src="Cabine_examen.jpeg" alt="Cabine d'examen" style="width:100%;height:100%;object-fit:cover;">
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Cabine d'examen</span><span class="en">Exam room</span></figcaption>
+      </figure>
+      <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
+        <img src="prduit_femme.jpeg" alt="Présentoir lunettes Femme" style="width:100%;height:100%;object-fit:cover;">
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Espace lunettes Femme</span><span class="en">Women's eyewear display</span></figcaption>
+      </figure>
+      <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
+        <img src="Lunettes_vue_solaires.jpeg" alt="Présentoir lunettes solaires" style="width:100%;height:100%;object-fit:cover;">
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Lunettes solaires Carrera</span><span class="en">Carrera sunglasses</span></figcaption>
+      </figure>
+      <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
+        <img src="carte-viste.jpeg" alt="Carte de visite Centre Optique Chefchaouen" style="width:100%;height:100%;object-fit:cover;">
+        <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Opticien · Optométriste · Contactologue</span><span class="en">Optician · Optometrist · Contact Lens Specialist</span></figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BOOKING + MAP ===================== -->
+<section class="booking" id="contact">
+  <div class="wrap">
+    <div class="booking-card">
+      <div class="booking-form">
+        <p class="eyebrow"><span class="fr">Prenez rendez-vous</span><span class="en">Book a visit</span></p>
+        <h2><span class="fr">Réservez votre examen de vue</span><span class="en">Reserve your eye exam</span></h2>
+        <p><span class="fr">Laissez-nous vos coordonnées, nous vous rappelons pour confirmer votre créneau.</span><span class="en">Leave us your details and we'll call you back to confirm a time.</span></p>
+        <form onsubmit="event.preventDefault(); window.location.href='tel:+212539883551';">
+          <div class="field-row">
+            <div class="field">
+              <label><span class="fr">Nom complet</span><span class="en">Full name</span></label>
+              <input type="text" placeholder="—" required>
+            </div>
+            <div class="field">
+              <label><span class="fr">Téléphone</span><span class="en">Phone</span></label>
+              <input type="tel" placeholder="06 00 00 00 00" required>
+            </div>
+          </div>
+          <div class="field-row">
+            <div class="field">
+              <label><span class="fr">Service souhaité</span><span class="en">Service needed</span></label>
+              <select>
+                <option><span class="fr">Examen de la vue</span></option>
+                <option>Lunettes optiques</option>
+                <option>Lunettes solaires</option>
+                <option>Lentilles de contact</option>
+              </select>
+            </div>
+            <div class="field">
+              <label><span class="fr">Date souhaitée</span><span class="en">Preferred date</span></label>
+              <input type="date">
+            </div>
+          </div>
+          <div class="field" style="margin-top:12px;">
+            <label><span class="fr">Message (optionnel)</span><span class="en">Message (optional)</span></label>
+            <textarea placeholder="—"></textarea>
+          </div>
+          <button type="submit" class="btn btn-brass"><span class="fr">Envoyer ma demande</span><span class="en">Send my request</span></button>
+          <p class="note"><span class="fr">Ce formulaire vous met en relation par téléphone — nous ne stockons aucune donnée en ligne pour le moment.</span><span class="en">This form connects you by phone — no data is stored online at this time.</span></p>
+        </form>
+      </div>
+      <div class="booking-map">
+        <div class="store-shot"><img src="facade.jpeg" alt="Centre Optique Chefchaouen — devanture"></div>
+        <iframe title="Localisation Centre Optique Chefchaouen" src="https://www.google.com/maps?q=Centre+Optique+Chefchaouen&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="info-strip">
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-6.2 7-12A7 7 0 0 0 5 10c0 5.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>Av. Allal El Fassi, N°27</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.2 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.3 1.2.4 2.5.6 3.8.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.6.6 3.8.1.4 0 .8-.3 1.1L6.6 10.8Z" stroke="currentColor" stroke-width="1.8"/></svg>05 39 88 35 51</div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3.2 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span class="fr">Lun–Sam, appelez pour confirmer</span><span class="en">Mon–Sat, call to confirm</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="fbrand">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M4 32C13 18 22 12 32 12C42 12 51 18 60 32C51 46 42 52 32 52C22 52 13 46 4 32Z" stroke="#F6F5F0" stroke-width="2.4"/>
+            <circle cx="32" cy="32" r="12" fill="#F6F5F0"/>
+          </svg>
+          <span>Centre Optique Chefchaouen</span>
+        </div>
+        <p class="desc"><span class="fr">Opticien, optométriste et contactologue à votre service pour une meilleure santé visuelle.</span><span class="en">Optician, optometrist and contact lens specialist, here for your eye health.</span></p>
+      </div>
+      <div>
+        <h4><span class="fr">Liens rapides</span><span class="en">Quick links</span></h4>
+        <nav>
+          <a href="#top"><span class="fr">Accueil</span><span class="en">Home</span></a>
+          <a href="#services">Services</a>
+          <a href="#collections"><span class="fr">Collections</span><span class="en">Collections</span></a>
+          <a href="#galerie"><span class="fr">Galerie</span><span class="en">Gallery</span></a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+      <div>
+        <h4><span class="fr">Informations</span><span class="en">Information</span></h4>
+        <div class="contact-lines">
+          <span>Av. Allal El Fassi, N°27<br>Chefchaouen, Maroc</span>
+          <a href="tel:+212539883551">05 39 88 35 51</a>
+          <a href="https://wa.me/212714082936" target="_blank" rel="noopener">WhatsApp</a>
+        </div>
+      </div>
+      <div>
+        <h4>Newsletter</h4>
+        <p class="desc"><span class="fr">Recevez nos actualités et offres spéciales.</span><span class="en">Get our news and special offers.</span></p>
+        <form class="newsletter-form" onsubmit="event.preventDefault();">
+          <input type="email" placeholder="votre@email.com" required>
+          <button type="submit"><span class="fr">S'abonner</span><span class="en">Subscribe</span></button>
+        </form>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; <span id="year"></span> Centre Optique Chefchaouen. <span class="fr">Tous droits réservés.</span><span class="en">All rights reserved.</span></span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/212714082936" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M17 14.5c-.3-.15-1.7-.85-2-.95-.27-.1-.46-.15-.66.15-.2.3-.76.95-.93 1.15-.17.2-.34.22-.63.07-.3-.15-1.24-.46-2.36-1.46-.87-.78-1.46-1.74-1.63-2.03-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.2-.24-.57-.48-.5-.66-.5-.17 0-.37-.02-.56-.02-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.47 0 1.46 1.07 2.87 1.22 3.07.15.2 2.1 3.2 5.08 4.5.71.3 1.26.49 1.7.63.71.23 1.36.2 1.87.12.57-.08 1.7-.7 1.94-1.37.24-.68.24-1.25.17-1.37-.07-.12-.27-.2-.57-.35Z" fill="#fff"/><circle cx="12" cy="12" r="9.2" stroke="#fff" stroke-width="1.6"/></svg>
+</a>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  const html = document.documentElement;
+  const buttons = document.querySelectorAll('[data-set-lang]');
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.getAttribute('data-set-lang');
+      html.setAttribute('data-lang', lang);
+      html.setAttribute('lang', lang);
+      buttons.forEach(b => b.classList.toggle('active', b === btn));
+    });
+  });
+</script>
+</body>
+</html>
