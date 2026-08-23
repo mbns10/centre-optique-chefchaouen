@@ -5,6 +5,26 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Centre Optique Chefchaouen — Opticien · Optométriste · Contactologue</title>
 <meta name="description" content="Centre Optique Chefchaouen — opticien, optométriste et adaptation de lentilles de contact. Av. Allal El Fassi, Garage N°27, Chefchaouen.">
+<link rel="icon" type="image/png" href="favicon.png">
+<meta property="og:title" content="Centre Optique Chefchaouen">
+<meta property="og:description" content="Opticien, optométriste et contactologue à Chefchaouen.">
+<meta property="og:image" content="facade.jpeg">
+<meta property="og:type" content="business.business">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Optician",
+  "name": "Centre Optique Chefchaouen",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Av. Allal El Fassi, Garage N°27",
+    "addressLocality": "Chefchaouen",
+    "addressCountry": "MA"
+  },
+  "telephone": "+212539883551",
+  "priceRange": "$$"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -24,6 +44,7 @@
     --shadow: 0 20px 45px rgba(21,44,70,0.16);
   }
   *{box-sizing:border-box;}
+  html, body{overflow-x:hidden; max-width:100%;}
   html{scroll-behavior:smooth;}
   body{margin:0;background:var(--whitewash);color:var(--ink);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;}
   img{max-width:100%;display:block;}
@@ -204,13 +225,20 @@
 
   .wa-float{position:fixed;right:22px;bottom:22px;width:54px;height:54px;border-radius:50%;background:var(--whatsapp);display:flex;align-items:center;justify-content:center;box-shadow:0 10px 24px rgba(37,211,102,0.45);z-index:60;text-decoration:none;}
   .wa-float svg{width:26px;height:26px;}
+  .fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease, transform .6s ease;}
+  .fade-in.visible{opacity:1;transform:translateY(0);}
 
   /* ---------- responsive ---------- */
   @media (max-width:980px){
     .topbar .left{display:none;}
     nav.links{display:none;}
-    .hero .wrap{grid-template-columns:1fr;}
-    .hero-photo{order:-1;aspect-ratio:16/9;}
+    .nav-right .btn-dark span{display:none;}
+    .nav-right .btn-dark{padding:11px 13px;}
+    .nav-right{gap:8px;}
+    .nav-inner{padding:12px 16px;}
+    .brand-name{font-size:0.9rem;}
+    .hero .wrap{grid-template-columns:1fr; padding:0 20px;}
+    .hero-photo{order:-1;aspect-ratio:16/9; width:100%;}
     .feature-strip .wrap{grid-template-columns:repeat(2,1fr);}
     .feature-strip .item:nth-child(3){border-left:none;}
     .stats-grid{grid-template-columns:repeat(2,1fr);gap:24px;}
@@ -225,6 +253,7 @@
   }
   @media (max-width:600px){
     .wrap{padding:0 20px;}
+    .topbar .wrap{padding:9px 16px;}
     .stats-grid{grid-template-columns:1fr;gap:20px;}
     .stat-number{font-size:2rem;}
     .services-grid{grid-template-columns:1fr;}
@@ -305,7 +334,7 @@
       </div>
     </div>
     <div class="hero-photo">
-      <img src="Cabine_examen.jpeg" alt="Cabine d'examen — Centre Optique Chefchaouen">
+      <img src="Cabine_examen.jpeg" alt="Cabine d'examen — Centre Optique Chefchaouen" onerror="this.src='https://via.placeholder.com/600x500?text=Centre+Optique+Chefchaouen'">
     </div>
   </div>
 </section>
@@ -446,19 +475,19 @@
     </div>
     <div class="coll-grid">
       <a class="coll-card" href="tel:+212539883551">
-        <img src="produit_homme.jpeg" alt="Collection Homme">
+        <img src="produit_homme.jpeg" alt="Collection Homme" loading="lazy" onerror="this.src='https://via.placeholder.com/600x800?text=Collection+Homme'">
         <div class="txt"><h3><span class="fr">Collection Homme</span><span class="en">Men's Collection</span></h3><p><span class="fr">Style et élégance</span><span class="en">Style &amp; elegance</span></p></div>
       </a>
       <a class="coll-card" href="tel:+212539883551">
-        <img src="prduit_femme.jpeg" alt="Collection Femme">
+        <img src="prduit_femme.jpeg" alt="Collection Femme" loading="lazy" onerror="this.src='https://via.placeholder.com/600x800?text=Collection+Femme'">
         <div class="txt"><h3><span class="fr">Collection Femme</span><span class="en">Women's Collection</span></h3><p><span class="fr">Tendance et raffinement</span><span class="en">Trend &amp; refinement</span></p></div>
       </a>
       <a class="coll-card" href="tel:+212539883551">
-        <img src="Lunettes_vue_solaires.jpeg" alt="Protection solaire">
+        <img src="Lunettes_vue_solaires.jpeg" alt="Protection solaire" loading="lazy" onerror="this.src='https://via.placeholder.com/600x800?text=Protection+Solaire'">
         <div class="txt"><h3><span class="fr">Protection solaire</span><span class="en">Sun Protection</span></h3><p><span class="fr">Style et protection UV</span><span class="en">Style &amp; UV protection</span></p></div>
       </a>
       <a class="coll-card" href="tel:+212539883551">
-        <img src="lentilles.jpeg" alt="Lentilles de contact">
+        <img src="lentilles.jpeg" alt="Lentilles de contact" loading="lazy" onerror="this.src='https://via.placeholder.com/600x800?text=Lentilles+de+Contact'">
         <div class="txt"><h3><span class="fr">Lentilles de contact</span><span class="en">Contact Lenses</span></h3><p><span class="fr">Confort et liberté</span><span class="en">Comfort &amp; freedom</span></p></div>
       </a>
     </div>
@@ -498,7 +527,7 @@
     <div class="team-grid">
       <div class="team-card">
         <div class="team-photo">
-          <img src="Cabine_examen.jpeg" alt="Équipe Centre Optique Chefchaouen">
+          <img src="Cabine_examen.jpeg" alt="Équipe Centre Optique Chefchaouen" loading="lazy" onerror="this.src='https://via.placeholder.com/600x750?text=Notre+Equipe'">
         </div>
         <div class="team-info">
           <h3><span class="fr">Notre équipe</span><span class="en">Our team</span></h3>
@@ -507,7 +536,7 @@
       </div>
       <div class="team-card">
         <div class="team-photo">
-          <img src="facade.jpeg" alt="Équipe Centre Optique Chefchaouen">
+          <img src="facade.jpeg" alt="Équipe Centre Optique Chefchaouen" loading="lazy" onerror="this.src='https://via.placeholder.com/600x750?text=Accueil+Conseil'">
         </div>
         <div class="team-info">
           <h3><span class="fr">Accueil & Conseil</span><span class="en">Welcome & Advice</span></h3>
@@ -516,7 +545,7 @@
       </div>
       <div class="team-card">
         <div class="team-photo">
-          <img src="produit_homme.jpeg" alt="Équipe Centre Optique Chefchaouen">
+          <img src="produit_homme.jpeg" alt="Équipe Centre Optique Chefchaouen" loading="lazy" onerror="this.src='https://via.placeholder.com/600x750?text=Expertise+Technique'">
         </div>
         <div class="team-info">
           <h3><span class="fr">Expertise technique</span><span class="en">Technical expertise</span></h3>
@@ -536,27 +565,27 @@
     </div>
     <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
       <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
-        <img src="produit_homme.jpeg" alt="Présentoir de montures Homme" style="width:100%;height:100%;object-fit:cover;">
+        <img src="produit_homme.jpeg" alt="Présentoir de montures Homme" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.src='https://via.placeholder.com/600x750?text=Espace+Montures+Homme'">
         <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Espace montures Homme</span><span class="en">Men's frame display</span></figcaption>
       </figure>
       <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
-        <img src="facade.jpeg" alt="Façade du magasin" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;">
+        <img src="facade.jpeg" alt="Façade du magasin" style="width:100%;height:100%;object-fit:cover;object-position:center 25%;" loading="lazy" onerror="this.src='https://via.placeholder.com/600x750?text=Facade+Magasin'">
         <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Notre façade, Av. Allal El Fassi</span><span class="en">Our storefront</span></figcaption>
       </figure>
       <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
-        <img src="Cabine_examen.jpeg" alt="Cabine d'examen" style="width:100%;height:100%;object-fit:cover;">
+        <img src="Cabine_examen.jpeg" alt="Cabine d'examen" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.src='https://via.placeholder.com/600x750?text=Cabine+Examen'">
         <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Cabine d'examen</span><span class="en">Exam room</span></figcaption>
       </figure>
       <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
-        <img src="prduit_femme.jpeg" alt="Présentoir lunettes Femme" style="width:100%;height:100%;object-fit:cover;">
+        <img src="prduit_femme.jpeg" alt="Présentoir lunettes Femme" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.src='https://via.placeholder.com/600x750?text=Espace+Lunettes+Femme'">
         <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Espace lunettes Femme</span><span class="en">Women's eyewear display</span></figcaption>
       </figure>
       <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
-        <img src="Lunettes_vue_solaires.jpeg" alt="Présentoir lunettes solaires" style="width:100%;height:100%;object-fit:cover;">
+        <img src="Lunettes_vue_solaires.jpeg" alt="Présentoir lunettes solaires" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.src='https://via.placeholder.com/600x750?text=Lunettes+Soleil'">
         <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Lunettes solaires Carrera</span><span class="en">Carrera sunglasses</span></figcaption>
       </figure>
       <figure style="margin:0;position:relative;overflow:hidden;border-radius:16px;aspect-ratio:4/5;box-shadow:0 10px 24px rgba(21,44,70,0.12);">
-        <img src="carte-viste.jpeg" alt="Carte de visite Centre Optique Chefchaouen" style="width:100%;height:100%;object-fit:cover;">
+        <img src="carte-viste.jpeg" alt="Carte de visite Centre Optique Chefchaouen" style="width:100%;height:100%;object-fit:cover;" loading="lazy" onerror="this.src='https://via.placeholder.com/600x750?text=Carte+Visite'">
         <figcaption style="position:absolute;left:0;right:0;bottom:0;padding:14px 16px 12px;background:linear-gradient(0deg, rgba(21,44,70,0.85), transparent);color:#fff;font-size:0.78rem;font-weight:500;"><span class="fr">Opticien · Optométriste · Contactologue</span><span class="en">Optician · Optometrist · Contact Lens Specialist</span></figcaption>
       </figure>
     </div>
@@ -571,21 +600,21 @@
         <p class="eyebrow"><span class="fr">Prenez rendez-vous</span><span class="en">Book a visit</span></p>
         <h2><span class="fr">Réservez votre examen de vue</span><span class="en">Reserve your eye exam</span></h2>
         <p><span class="fr">Laissez-nous vos coordonnées, nous vous rappelons pour confirmer votre créneau.</span><span class="en">Leave us your details and we'll call you back to confirm a time.</span></p>
-        <form onsubmit="event.preventDefault(); window.location.href='tel:+212539883551';">
+        <form id="bookingForm">
           <div class="field-row">
             <div class="field">
-              <label><span class="fr">Nom complet</span><span class="en">Full name</span></label>
-              <input type="text" placeholder="—" required>
+              <label for="booking-name"><span class="fr">Nom complet</span><span class="en">Full name</span></label>
+              <input type="text" id="booking-name" placeholder="—" required>
             </div>
             <div class="field">
-              <label><span class="fr">Téléphone</span><span class="en">Phone</span></label>
-              <input type="tel" placeholder="06 00 00 00 00" required>
+              <label for="booking-phone"><span class="fr">Téléphone</span><span class="en">Phone</span></label>
+              <input type="tel" id="booking-phone" placeholder="06 00 00 00 00" required>
             </div>
           </div>
           <div class="field-row">
             <div class="field">
-              <label><span class="fr">Service souhaité</span><span class="en">Service needed</span></label>
-              <select>
+              <label for="booking-service"><span class="fr">Service souhaité</span><span class="en">Service needed</span></label>
+              <select id="booking-service">
                 <option><span class="fr">Examen de la vue</span></option>
                 <option>Lunettes optiques</option>
                 <option>Lunettes solaires</option>
@@ -593,20 +622,20 @@
               </select>
             </div>
             <div class="field">
-              <label><span class="fr">Date souhaitée</span><span class="en">Preferred date</span></label>
-              <input type="date">
+              <label for="booking-date"><span class="fr">Date souhaitée</span><span class="en">Preferred date</span></label>
+              <input type="date" id="booking-date">
             </div>
           </div>
           <div class="field" style="margin-top:12px;">
-            <label><span class="fr">Message (optionnel)</span><span class="en">Message (optional)</span></label>
-            <textarea placeholder="—"></textarea>
+            <label for="booking-message"><span class="fr">Message (optionnel)</span><span class="en">Message (optional)</span></label>
+            <textarea id="booking-message" placeholder="—"></textarea>
           </div>
           <button type="submit" class="btn btn-brass"><span class="fr">Envoyer ma demande</span><span class="en">Send my request</span></button>
-          <p class="note"><span class="fr">Ce formulaire vous met en relation par téléphone — nous ne stockons aucune donnée en ligne pour le moment.</span><span class="en">This form connects you by phone — no data is stored online at this time.</span></p>
+          <p class="note"><span class="fr">Ce formulaire envoie votre demande directement sur WhatsApp — nous ne stockons aucune donnée en ligne.</span><span class="en">This form sends your request directly to WhatsApp — no data is stored online.</span></p>
         </form>
       </div>
       <div class="booking-map">
-        <div class="store-shot"><img src="facade.jpeg" alt="Centre Optique Chefchaouen — devanture"></div>
+        <div class="store-shot"><img src="facade.jpeg" alt="Centre Optique Chefchaouen — devanture" loading="lazy" onerror="this.src='https://via.placeholder.com/600x210?text=Centre+Optique+Chefchaouen'"></div>
         <iframe title="Localisation Centre Optique Chefchaouen" src="https://www.google.com/maps?q=Centre+Optique+Chefchaouen&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
         <div class="info-strip">
           <div class="row"><svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 22s7-6.2 7-12A7 7 0 0 0 5 10c0 5.8 7 12 7 12Z" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.4" stroke="currentColor" stroke-width="1.8"/></svg>Av. Allal El Fassi, N°27</div>
@@ -654,7 +683,7 @@
         <h4>Newsletter</h4>
         <p class="desc"><span class="fr">Recevez nos actualités et offres spéciales.</span><span class="en">Get our news and special offers.</span></p>
         <form class="newsletter-form" onsubmit="event.preventDefault();">
-          <input type="email" placeholder="votre@email.com" required>
+          <input type="email" id="newsletter-email" placeholder="votre@email.com" required>
           <button type="submit"><span class="fr">S'abonner</span><span class="en">Subscribe</span></button>
         </form>
       </div>
@@ -680,6 +709,26 @@
       html.setAttribute('lang', lang);
       buttons.forEach(b => b.classList.toggle('active', b === btn));
     });
+  });
+
+  const obs = new IntersectionObserver(entries=>{
+    entries.forEach(e=>{ if(e.isIntersecting) e.target.classList.add('visible'); });
+  },{threshold:0.15});
+  document.querySelectorAll('.service-tile,.coll-card,.team-card,.why-item').forEach(el=>{
+    el.classList.add('fade-in'); obs.observe(el);
+  });
+
+  document.getElementById('bookingForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const nom = document.getElementById('booking-name').value;
+    const tel = document.getElementById('booking-phone').value;
+    const service = document.getElementById('booking-service').value;
+    const date = document.getElementById('booking-date').value;
+    const message = document.getElementById('booking-message').value;
+    let msg = `Bonjour, je souhaite un RDV.\nNom: ${nom}\nTél: ${tel}\nService: ${service}`;
+    if(date) msg += `\nDate: ${date}`;
+    if(message) msg += `\nMessage: ${message}`;
+    window.open(`https://wa.me/212714082936?text=${encodeURIComponent(msg)}`, '_blank');
   });
 </script>
 </body>
