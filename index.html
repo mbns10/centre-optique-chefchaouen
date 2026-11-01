@@ -146,6 +146,103 @@ details{border-bottom:1px solid rgba(83,102,109,.15)}summary{color:var(--slate)}
 #contact .btn:not(.p){background:var(--white);border-color:var(--beige);color:var(--text)}#contact .btn:not(.p):hover{background:var(--bg2);border-color:var(--soft)}
 footer{background:var(--slate);color:rgba(255,255,255,.88);border-top:0}footer h3{color:var(--white)}footer a{color:rgba(255,255,255,.88);transition:color .3s}footer a:hover{color:var(--beige)}footer details{border-color:rgba(255,255,255,.22)}footer summary{color:var(--white)}
 #ld{background:var(--bg);color:var(--slate)}#ld svg{stroke:var(--slate)}#cur{border-color:var(--slate)}
+
+/* ===== HERO : 3 boutons d'action ===== */
+.hb{gap:14px;align-items:stretch}
+.hb .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:12px 26px;white-space:nowrap}
+.hb svg,.pop svg{width:19px;height:19px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.hb .btn.o{background:var(--white);border-color:var(--beige);color:var(--slate);box-shadow:0 4px 14px rgba(83,102,109,.07)}
+.hb .btn.o:hover{background:var(--bg2);border-color:var(--soft);color:var(--text);box-shadow:0 10px 22px rgba(83,102,109,.13)}
+.hb .btn.o svg{transition:transform .35s}.hb .btn.o:hover svg{transform:scale(1.12)}
+.hr{position:relative}
+.pop{position:absolute;top:calc(100% + 10px);inset-inline-start:0;min-width:270px;z-index:6;background:var(--white);border:1px solid var(--beige);border-radius:20px;padding:8px;box-shadow:0 20px 44px rgba(83,102,109,.18);opacity:0;visibility:hidden;transform:translateY(-8px);transition:opacity .3s,transform .3s,visibility .3s}
+.pop.on{opacity:1;visibility:visible;transform:none}
+.pop a{display:flex;align-items:center;gap:12px;min-height:52px;padding:12px 16px;border-radius:14px;text-decoration:none;color:var(--text);transition:background .25s}
+.pop a:hover,.pop a:focus-visible{background:var(--bg2)}
+.pop a svg{color:var(--slate)}
+@media(max-width:820px){
+.hb{flex-direction:column;gap:12px}
+.hb .btn,.hr{width:100%}
+.hb .btn{min-height:54px}
+.pop{position:static;min-width:0;max-height:0;padding:0;border-width:0;overflow:hidden;transform:none;margin-top:0;transition:max-height .4s,margin .4s,padding .4s,opacity .3s,visibility .3s}
+.pop.on{max-height:220px;padding:8px;border-width:1px;margin-top:10px}
+}
+
+/* ===== RENDEZ-VOUS : Soft Modern, Minimal & Elegant ===== */
+#rdv{padding:120px 0}
+.rd{max-width:1040px}
+.rd-h{max-width:720px;margin-bottom:60px}
+.eyebrow{display:flex;align-items:center;gap:14px;margin-bottom:24px;font:500 .78rem/1.4 var(--sans);letter-spacing:.22em;text-transform:uppercase;color:var(--slate)}
+.eyebrow:before{content:"";flex:none;width:36px;height:1px;background:var(--beige)}
+[dir=rtl] .eyebrow{letter-spacing:0;text-transform:none;font-family:Cairo,var(--sans)}
+#rdv h2{font-size:clamp(2.8rem,8vw,5.4rem);line-height:1.02;max-width:11ch;margin-bottom:24px}
+.rd-h .rd-p{font-size:1.12rem;max-width:56ch;opacity:.92}
+.rst{background:var(--white);border:1px solid rgba(83,102,109,.10);border-radius:24px;padding:36px;margin-bottom:22px;box-shadow:0 8px 28px rgba(83,102,109,.06);transition:border-color .3s,box-shadow .3s}
+.rst.bad{border-color:#b9736a;box-shadow:0 0 0 3px rgba(185,115,106,.15)}
+.rst-h{display:flex;align-items:baseline;gap:16px;margin-bottom:8px}
+.rst-h i{font:600 1.5rem var(--serif);font-style:normal;color:var(--beige)}
+.rst-h h3{font-size:clamp(1.5rem,3vw,1.9rem)}
+.rhint{font-size:.95rem;opacity:.75;margin-bottom:22px}
+.rst-h+.rdt,.rst-h+.rfd{margin-top:20px}
+.rsg{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.rsc{position:relative;display:flex;flex-direction:column;align-items:flex-start;gap:16px;min-height:132px;padding:22px;border-radius:18px;border:1px solid var(--bg2);background:var(--bg);color:var(--text);font:inherit;text-align:start;cursor:pointer;transition:transform .35s,background .35s,border-color .35s,box-shadow .35s,color .35s}
+.rsc svg{width:34px;height:34px;fill:none;stroke:var(--slate);stroke-width:1.2;stroke-linecap:round;stroke-linejoin:round;transition:stroke .35s,transform .35s}
+.rsc b{font:600 1.4rem/1.15 var(--serif);color:var(--slate);transition:color .35s}
+[dir=rtl] .rsc b{font-family:Cairo,serif;font-size:1.15rem}
+.rsc:after{content:"";position:absolute;top:16px;inset-inline-end:16px;width:22px;height:22px;border-radius:50%;border:1px solid var(--beige);transition:background .35s,border-color .35s}
+.rsc:hover{transform:translateY(-3px);border-color:var(--soft);box-shadow:0 14px 30px rgba(83,102,109,.12)}
+.rsc:hover svg{transform:scale(1.08)}
+.rsc[aria-pressed=true]{background:var(--slate);border-color:var(--slate);box-shadow:0 16px 34px rgba(83,102,109,.22)}
+.rsc[aria-pressed=true] svg{stroke:var(--white)}
+.rsc[aria-pressed=true] b{color:var(--white)}
+.rsc[aria-pressed=true]:after{border-color:var(--soft);background:var(--soft) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2335464C' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12l5 5 9-10'/%3E%3C/svg%3E") center/13px no-repeat}
+.rdt{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.cal-h{display:flex;align-items:center;justify-content:space-between;margin-bottom:16px}
+.cal-h b{font:600 1.5rem var(--serif);color:var(--slate);text-transform:capitalize}
+[dir=rtl] .cal-h b{font-family:Cairo,serif}
+.cal-h button{width:44px;height:44px;border-radius:50%;border:1px solid var(--beige);background:var(--white);color:var(--slate);font-size:1.2rem;line-height:1;cursor:pointer;transition:background .25s,transform .25s}
+.cal-h button:hover:not(:disabled){background:var(--bg2);transform:scale(1.06)}
+.cal-h button:disabled{opacity:.3;cursor:default}
+.cal-g{display:grid;grid-template-columns:repeat(7,1fr);gap:6px}
+.cal-w{padding:4px 0;text-align:center;font-size:.75rem;text-transform:uppercase;opacity:.55}
+.cal-d{aspect-ratio:1;min-height:40px;border:1px solid transparent;border-radius:14px;background:none;color:var(--text);font:inherit;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.cal-d:hover:not(:disabled){background:var(--bg2);transform:scale(1.06)}
+.cal-d.td{border-color:var(--beige)}
+.cal-d[aria-pressed=true]{background:var(--slate);border-color:var(--slate);color:var(--white)}
+.cal-d:disabled{opacity:.28;cursor:default}
+.rsum{min-height:1.6em;margin-bottom:18px;font:600 1.35rem/1.3 var(--serif);color:var(--slate);text-transform:capitalize}
+[dir=rtl] .rsum{font-family:Cairo,serif;font-size:1.1rem}
+.rtm{display:grid;grid-template-columns:repeat(auto-fill,minmax(88px,1fr));gap:10px}
+.rtb{min-height:46px;border-radius:30px;border:1px solid var(--soft);background:var(--white);color:var(--slate);font:inherit;cursor:pointer;transition:background .25s,color .25s,border-color .25s,transform .25s}
+.rtb:hover:not(:disabled){background:var(--bg2);transform:translateY(-2px)}
+.rtb[aria-pressed=true]{background:var(--slate);border-color:var(--slate);color:var(--white)}
+.rtb:disabled{opacity:.3;cursor:default}
+.rfd{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.rfd .full{grid-column:1/-1}
+.rl{display:block;margin-bottom:8px;font-size:.88rem;font-weight:500;color:var(--slate)}
+.rfd input,.rfd textarea{min-height:52px;padding:14px 16px;border-radius:14px;background:var(--bg)}
+.rfd input:focus,.rfd textarea:focus{background:var(--white)}
+.rfd textarea{resize:vertical}
+.rsub{display:flex;align-items:center;gap:26px;flex-wrap:wrap;margin-top:34px}
+#rsend{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:58px;padding:16px 36px;font-size:1.05rem}
+#rsend svg{width:22px;height:22px;flex:none;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+.rnote{flex:1 1 280px;max-width:46ch;font-size:.9rem;opacity:.75}
+#rn{margin-top:18px;font-size:.95rem}
+#rn.rerr{color:#9a4a41}
+#rn.rok{color:var(--slate)}
+@media(max-width:820px){
+#rdv{padding:80px 0}
+.rd-h{margin-bottom:40px}
+.rst{padding:24px 18px;border-radius:20px}
+.rsg{grid-template-columns:1fr 1fr;gap:10px}
+.rsc{min-height:118px;padding:16px;gap:12px}
+.rsc b{font-size:1.18rem}
+.rdt{grid-template-columns:1fr;gap:26px}
+.rfd{grid-template-columns:1fr}
+.rsub{flex-direction:column;align-items:stretch;gap:16px}
+#rsend{width:100%}
+.rnote{flex:none;max-width:none;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -154,7 +251,14 @@ footer{background:var(--slate);color:rgba(255,255,255,.88);border-top:0}footer h
 
 <header class="hero"><div class="bg"></div>
 
-<div class="w"><div><h1>CENTRE OPTIQUE CHEFCHAOUEN</h1><div class="t" data-i="slogan"></div><p data-i="sub"></p><p class="loc" data-i="loc"></p><div class="b"><a class="btn p" href="#brands" data-i="c1"></a><a class="btn" href="#contact" data-i="c2"></a></div><a class="sd" href="#services" aria-label="Défiler"></a></div><div class="hp" data-img="hero.main"></div></div></header>
+<div class="w"><div><h1>CENTRE OPTIQUE CHEFCHAOUEN</h1><div class="t" data-i="slogan"></div><p data-i="sub"></p><p class="loc" data-i="loc"></p>
+<div class="b hb">
+<a class="btn p" href="#brands"><span data-i="c1"></span></a>
+<a class="btn o" id="hdir" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-i="c3"></span></a>
+<div class="hr"><button type="button" class="btn o" id="hrb" aria-expanded="false" aria-haspopup="true" aria-controls="hpop"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="5" width="17" height="15.5" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17"/></svg><span data-i="br"></span></button>
+<div class="pop" id="hpop"><a id="hwa" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2L9 8.5z"/></svg><span data-i="hw"></span></a><a id="hcall"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span data-i="hc"></span></a></div></div>
+</div>
+<a class="sd" href="#services" aria-label="Défiler"></a></div><div class="hp" data-img="hero.main"></div></div></header>
 
 <section class="vid"><div class="w"><h2 data-i="vt"></h2><p data-i="vs" style="margin:-10px 0 26px;opacity:.85"></p>
 <div class="frame" id="frame">
@@ -178,7 +282,18 @@ footer{background:var(--slate);color:rgba(255,255,255,.88);border-top:0}footer h
 <section id="reviews"><div class="w ab"><div data-img="reviews.store" style="aspect-ratio:4/5"></div><div><h2 data-i="rt"></h2><p data-i="rp" style="max-width:56ch"></p>
 <div class="b"><a class="btn p" id="rev" target="_blank" rel="noopener" data-i="rb1"></a><a class="btn" id="wr" target="_blank" rel="noopener" data-i="rb2"></a><a class="btn" id="dir" target="_blank" rel="noopener" data-i="c3"></a></div><iframe id="mp" title="Google Maps" loading="lazy" style="width:100%;height:260px;border:0;border-radius:16px;margin-top:22px"></iframe></div></div></section>
 
-<section id="rdv" style="background:var(--grey)"><div class="w ab"><div><h2 data-i="rt2"></h2><p data-i="rp2" style="max-width:48ch"></p></div><form id="rf"><input name="n" required data-p="fn"><input name="t" type="tel" required data-p="ph"><select name="s" id="rs" required></select><input name="d" type="date" required><input name="h" type="time" required><textarea name="m" rows="3" data-p="fm2"></textarea><button class="btn p" data-i="rsend" style="color:#111820"></button><p id="rn" role="status"></p></form></div></section>
+<section id="rdv"><div class="w rd">
+<div class="rd-h rv"><p class="eyebrow" data-i="reye"></p><h2 data-i="rh"></h2><p class="rd-p" data-i="rd"></p></div>
+<form id="rf" novalidate>
+<div class="rst rv" id="rs1"><div class="rst-h"><i>01</i><h3 data-i="s1"></h3></div><p class="rhint" data-i="s1h"></p><div class="rsg" id="rsg"></div></div>
+<div class="rst rv" id="rs2"><div class="rst-h"><i>02</i><h3 data-i="s2"></h3></div><div class="rdt"><div id="rcal"></div><div><p class="rsum" id="rsum" aria-live="polite"></p><div class="rtm" id="rtm"></div></div></div></div>
+<div class="rst rv" id="rs3"><div class="rst-h"><i>03</i><h3 data-i="s3"></h3></div><div class="rfd">
+<div><label class="rl" for="rname" data-i="rn1"></label><input id="rname" name="n" autocomplete="name" data-p="rpn"></div>
+<div><label class="rl" for="rtel" data-i="rn2"></label><input id="rtel" name="t" type="tel" inputmode="tel" autocomplete="tel" data-p="rpt"></div>
+<div class="full"><label class="rl" for="rmsg" data-i="rn3"></label><textarea id="rmsg" name="m" rows="3" data-p="rpm"></textarea></div></div></div>
+<div class="rsub rv"><button class="btn p" id="rsend" type="submit"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2L9 8.5z"/></svg><span data-i="rsend"></span></button><p class="rnote" data-i="rnote"></p></div>
+<p id="rn" role="status" aria-live="polite"></p>
+</form></div></section>
 <section id="faq"><div class="w"><h2 data-i="fq" style="max-width:20ch"></h2><div id="fl"></div></div></section>
 <section id="contact" style="background:var(--deep);color:#F8F7F3"><div class="w"><h2 data-i="ct"></h2><div class="ct"><div>
 <p id="addr"></p><p id="tel"></p><p id="hrs"></p>
@@ -188,8 +303,13 @@ footer{background:var(--slate);color:rgba(255,255,255,.88);border-top:0}footer h
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script>
-/* ===== CONFIG : à modifier avec les vraies informations ===== */
+/* ===== CONFIG : à modifier avec les vraies informations =====
+   whatsapp : chiffres uniquement, format international sans + ni espaces (ex. "2126XXXXXXXX")
+   phone    : numéro à appeler (ex. "+2125XXXXXXXX")
+   Tant que ces champs sont vides, rien n'est inventé : le bouton « Appeler » est masqué. */
 const CFG={address:"",phone:"",whatsapp:"",hours:"",mapsQuery:"Centre Optique Chefchaouen",googleReviewsUrl:"",googleWriteReviewUrl:"",email:"",instagram:"",facebook:"",legalUrl:""};
+/* Créneaux proposés dans le formulaire de rendez-vous (à adapter aux horaires du centre) */
+const SLOTS=["09:00","10:00","11:00","12:00","13:00","14:00","15:00","16:00","17:00","18:00"];
 /* ===== DONNÉES MARQUES : ajoutez une marque ou un modèle ici ===== */
 const BRANDS=["Ray-Ban","Gucci","Prada","Versace","Dior","Oakley","Vogue Eyewear","Polaroid","Carrera","Tommy Hilfiger"];
 const PRODUCTS=[]; // {brand,name,cat:'sun'|'opt',style:'men'|'women',colors:['Noir'],img:'/images/xxx.webp'}
@@ -205,7 +325,40 @@ const X2={fr:{fst:"Nos sélections exclusives",rt2:"Prendre rendez-vous",rp2:"Ch
 en:{fst:"Our exclusive selections",rt2:"Book an appointment",rp2:"Choose a service, a date and a time. Your request is sent via WhatsApp and the appointment is only confirmed once the store validates it.",fm2:"Message (optional)",rsend:"Send request",rok:"Request prepared in WhatsApp. The store will confirm the appointment.",rsel:"Service",rm:"Appointment request (to be confirmed by the store)",wai:"Hello, I would like some information.",waa:"Hello, could you send me the address and opening hours of the center?",wad:"Hello, is this model available? ",bi:"Ask for information",bc:"Get contact details",br:"Book an appointment",av:"Check availability",sh:"Share",cp:"Link copied",rf:"Ref.",fq:"Frequently asked questions",fa:"Optician in Chefchaouen: prescription glasses, sunglasses, lenses and contact lenses.",pv:"Privacy",pvt:"Information typed in forms is only used to prepare your WhatsApp or email message; this site does not store it.",lg:"Legal notice",q:[["Where is Centre Optique Chefchaouen?","In Chefchaouen, Morocco. The Directions button in the Reviews section opens Google Maps."],["Which brands are available?","The site features Ray-Ban, Gucci, Prada, Versace, Dior, Oakley, Vogue Eyewear, Polaroid, Carrera and Tommy Hilfiger. Ask about a model’s availability on WhatsApp."],["Do you sell sunglasses?","Yes, the center offers sunglasses as well as optical and prescription glasses."],["How do I choose a frame?","It depends on your face shape, your prescription and your style. The team will advise you."],["How can I contact the store?","By phone, WhatsApp or the form in the Contact section."],["How do I request an appointment?","Fill in the Appointment form: the request goes to WhatsApp and the store confirms it."]]},
 ar:{fst:"تشكيلاتنا الحصرية",rt2:"احجز موعدًا",rp2:"اختر الخدمة والتاريخ والوقت. يُرسل طلبك عبر واتساب ولا يُعتبر الموعد مؤكدًا إلا بعد موافقة المتجر.",fm2:"رسالة (اختياري)",rsend:"إرسال الطلب",rok:"تم تجهيز الطلب في واتساب. سيؤكد المتجر الموعد.",rsel:"الخدمة المطلوبة",rm:"طلب موعد (بانتظار تأكيد المتجر)",wai:"مرحبًا، أودّ الحصول على معلومات.",waa:"مرحبًا، هل يمكنكم إرسال عنوان المركز وأوقات العمل؟",wad:"مرحبًا، هل هذا الموديل متوفر؟ ",bi:"اطلب معلومات",bc:"احصل على بيانات الاتصال",br:"احجز موعدًا",av:"تحقق من التوفر",sh:"مشاركة",cp:"تم نسخ الرابط",rf:"المرجع",fq:"أسئلة شائعة",fa:"مركز البصريات بشفشاون: نظارات طبية وشمسية وعدسات.",pv:"الخصوصية",pvt:"المعلومات المدخلة في النماذج تُستعمل فقط لتحضير رسالتك عبر واتساب أو البريد، ولا يحفظها هذا الموقع.",lg:"الإشعارات القانونية",q:[["أين يوجد مركز البصريات شفشاون؟","في شفشاون، المغرب. زر الاتجاهات في قسم الآراء يفتح خرائط Google."],["ما هي العلامات المتوفرة؟","يعرض الموقع Ray-Ban وGucci وPrada وVersace وDior وOakley وVogue Eyewear وPolaroid وCarrera وTommy Hilfiger. اسأل عن توفر أي موديل عبر واتساب."],["هل تتوفرون على نظارات شمسية؟","نعم، يقدم المركز نظارات شمسية إضافة إلى النظارات الطبية والبصرية."],["كيف أختار الإطار؟","حسب شكل الوجه ودرجة النظر وأسلوبك. سيقدم لك الفريق النصيحة."],["كيف أتواصل مع المتجر؟","عبر الهاتف أو واتساب أو نموذج قسم اتصل بنا."],["كيف أطلب موعدًا؟","املأ نموذج الموعد: يُرسل الطلب عبر واتساب ويؤكده المتجر."]]},
 es:{fst:"Nuestras selecciones exclusivas",rt2:"Pedir cita",rp2:"Elija un servicio, una fecha y una hora. Su solicitud se envía por WhatsApp y la cita solo se confirma cuando la tienda la valida.",fm2:"Mensaje (opcional)",rsend:"Enviar solicitud",rok:"Solicitud preparada en WhatsApp. La tienda confirmará la cita.",rsel:"Servicio deseado",rm:"Solicitud de cita (por confirmar por la tienda)",wai:"Hola, me gustaría recibir información.",waa:"Hola, ¿pueden enviarme la dirección y el horario del centro?",wad:"Hola, ¿está disponible este modelo? ",bi:"Pedir información",bc:"Obtener datos de contacto",br:"Pedir cita",av:"Comprobar disponibilidad",sh:"Compartir",cp:"Enlace copiado",rf:"Ref.",fq:"Preguntas frecuentes",fa:"Óptica en Chefchaouen: gafas graduadas, de sol, lentes y lentillas.",pv:"Privacidad",pvt:"La información introducida en los formularios solo sirve para preparar su mensaje de WhatsApp o correo; este sitio no la guarda.",lg:"Aviso legal",q:[["¿Dónde está el Centro Óptico Chefchaouen?","En Chefchaouen, Marruecos. El botón Cómo llegar de la sección Opiniones abre Google Maps."],["¿Qué marcas hay disponibles?","El sitio presenta Ray-Ban, Gucci, Prada, Versace, Dior, Oakley, Vogue Eyewear, Polaroid, Carrera y Tommy Hilfiger. Pregunte por la disponibilidad de un modelo por WhatsApp."],["¿Ofrecen gafas de sol?","Sí, el centro ofrece gafas de sol, además de gafas ópticas y graduadas."],["¿Cómo elegir una montura?","Depende de la forma del rostro, su graduación y su estilo. El equipo le aconsejará."],["¿Cómo contactar con la tienda?","Por teléfono, WhatsApp o con el formulario de la sección Contacto."],["¿Cómo pedir una cita?","Rellene el formulario de Cita: la solicitud va por WhatsApp y la tienda la confirma."]]}};
-for(const l in X)Object.assign(T[l],X[l],X2[l]);
+/* Hero (menu rendez-vous) + nouvelle section rendez-vous */
+const X3={fr:{hw:"Demander par WhatsApp",hc:"Appeler le centre",hwm:"Bonjour, je souhaite prendre rendez-vous au Centre Optique Chefchaouen. Pouvez-vous me proposer un créneau ?",
+reye:"CENTRE OPTIQUE CHEFCHAOUEN · SUR RENDEZ-VOUS",rh:"Prenons soin de votre regard.",rd:"Un conseil, un nouvel équipement ou un accompagnement personnalisé ? Notre équipe vous accueille et vous accompagne dans le choix de la solution adaptée à vos besoins.",
+s1:"Votre besoin",s1h:"Touchez un ou plusieurs services.",s2:"Date et heure souhaitées",s3:"Vos coordonnées",rn1:"Nom et prénom",rn2:"Numéro de téléphone",rn3:"Message complémentaire (facultatif)",rpn:"Votre nom et prénom",rpt:"+212 6 00 00 00 00",rpm:"Précisez votre demande si vous le souhaitez",
+rsend:"Envoyer ma demande",rnote:"Votre demande est transmise directement à notre équipe. Votre rendez-vous sera confirmé après validation par le centre.",
+e1:"Veuillez choisir au moins un service.",e2:"Veuillez choisir une date.",e3:"Veuillez choisir une heure.",e4:"Veuillez indiquer votre nom et prénom.",e5:"Veuillez indiquer un numéro de téléphone valide.",
+rok:"Votre demande est prête dans WhatsApp : envoyez-la pour la transmettre à notre équipe. Le rendez-vous sera confirmé après validation par le centre.",sel:"Choisissez une date",mp:"Mois précédent",mn:"Mois suivant",
+rsv:["Lunettes de vue","Lunettes de soleil","Choix de montures","Verres correcteurs","Lentilles de contact","Conseil personnalisé"],
+wm:"Bonjour, je souhaite demander un rendez-vous au Centre Optique Chefchaouen.",ml:["Nom","Téléphone","Besoin(s)","Date souhaitée","Heure souhaitée","Message"],mf:"Merci de me confirmer le créneau."},
+en:{hw:"Request via WhatsApp",hc:"Call the center",hwm:"Hello, I would like to book an appointment at Centre Optique Chefchaouen. Could you suggest a time slot?",
+reye:"CENTRE OPTIQUE CHEFCHAOUEN · BY APPOINTMENT",rh:"Let’s take care of your eyes.",rd:"Advice, new eyewear or personal guidance? Our team welcomes you and helps you choose the solution that fits your needs.",
+s1:"What you need",s1h:"Tap one or more services.",s2:"Preferred date and time",s3:"Your details",rn1:"Full name",rn2:"Phone number",rn3:"Additional message (optional)",rpn:"Your full name",rpt:"+212 6 00 00 00 00",rpm:"Add details if you wish",
+rsend:"Send my request",rnote:"Your request goes directly to our team. Your appointment will be confirmed after validation by the center.",
+e1:"Please choose at least one service.",e2:"Please choose a date.",e3:"Please choose a time.",e4:"Please enter your full name.",e5:"Please enter a valid phone number.",
+rok:"Your request is ready in WhatsApp: send it to pass it on to our team. The appointment will be confirmed after validation by the center.",sel:"Choose a date",mp:"Previous month",mn:"Next month",
+rsv:["Prescription glasses","Sunglasses","Frame selection","Corrective lenses","Contact lenses","Personal advice"],
+wm:"Hello, I would like to request an appointment at Centre Optique Chefchaouen.",ml:["Name","Phone","Service(s)","Preferred date","Preferred time","Message"],mf:"Please confirm the time slot."},
+ar:{hw:"اطلب عبر واتساب",hc:"اتصل بالمركز",hwm:"مرحبًا، أودّ حجز موعد في مركز البصريات شفشاون. هل يمكنكم اقتراح وقت مناسب؟",
+reye:"مركز البصريات شفشاون · بموعد مسبق",rh:"لنعتنِ بنظرك.",rd:"نصيحة، تجهيز جديد أو مرافقة شخصية؟ يستقبلكم فريقنا ويرافقكم في اختيار الحل المناسب لاحتياجاتكم.",
+s1:"حاجتك",s1h:"اختر خدمة أو أكثر.",s2:"التاريخ والوقت المفضلان",s3:"بياناتك",rn1:"الاسم الكامل",rn2:"رقم الهاتف",rn3:"رسالة إضافية (اختياري)",rpn:"اسمك الكامل",rpt:"+212 6 00 00 00 00",rpm:"أضف تفاصيل إن أردت",
+rsend:"إرسال طلبي",rnote:"يُرسل طلبك مباشرة إلى فريقنا. سيتم تأكيد موعدك بعد موافقة المركز.",
+e1:"يرجى اختيار خدمة واحدة على الأقل.",e2:"يرجى اختيار تاريخ.",e3:"يرجى اختيار وقت.",e4:"يرجى إدخال اسمك الكامل.",e5:"يرجى إدخال رقم هاتف صالح.",
+rok:"طلبك جاهز في واتساب: أرسله ليصل إلى فريقنا. سيتم تأكيد الموعد بعد موافقة المركز.",sel:"اختر تاريخًا",mp:"الشهر السابق",mn:"الشهر التالي",
+rsv:["نظارات طبية","نظارات شمسية","اختيار الإطارات","عدسات طبية","عدسات لاصقة","نصيحة شخصية"],
+wm:"مرحبًا، أودّ طلب موعد في مركز البصريات شفشاون.",ml:["الاسم","الهاتف","الخدمة","التاريخ المفضل","الوقت المفضل","رسالة"],mf:"المرجو تأكيد الموعد."},
+es:{hw:"Pedir por WhatsApp",hc:"Llamar al centro",hwm:"Hola, me gustaría pedir cita en el Centro Óptico Chefchaouen. ¿Pueden proponerme un horario?",
+reye:"CENTRO ÓPTICO CHEFCHAOUEN · CON CITA PREVIA",rh:"Cuidemos su mirada.",rd:"¿Un consejo, un nuevo equipamiento o un acompañamiento personalizado? Nuestro equipo le recibe y le ayuda a elegir la solución adaptada a sus necesidades.",
+s1:"Su necesidad",s1h:"Toque uno o varios servicios.",s2:"Fecha y hora deseadas",s3:"Sus datos",rn1:"Nombre y apellidos",rn2:"Número de teléfono",rn3:"Mensaje adicional (opcional)",rpn:"Su nombre y apellidos",rpt:"+212 6 00 00 00 00",rpm:"Añada detalles si lo desea",
+rsend:"Enviar mi solicitud",rnote:"Su solicitud se envía directamente a nuestro equipo. Su cita se confirmará tras la validación del centro.",
+e1:"Elija al menos un servicio.",e2:"Elija una fecha.",e3:"Elija una hora.",e4:"Indique su nombre y apellidos.",e5:"Indique un número de teléfono válido.",
+rok:"Su solicitud está lista en WhatsApp: envíela para transmitirla a nuestro equipo. La cita se confirmará tras la validación del centro.",sel:"Elija una fecha",mp:"Mes anterior",mn:"Mes siguiente",
+rsv:["Gafas graduadas","Gafas de sol","Elección de monturas","Lentes correctoras","Lentillas","Consejo personalizado"],
+wm:"Hola, me gustaría solicitar una cita en el Centro Óptico Chefchaouen.",ml:["Nombre","Teléfono","Servicio(s)","Fecha deseada","Hora deseada","Mensaje"],mf:"Gracias por confirmarme el horario."}};
+for(const l in X)Object.assign(T[l],X[l],X2[l],X3[l]);
 /* ===== IMAGES : un seul endroit. Ajoutez "clé":["assets/images/dossier/fichier.webp","texte ALT"] pour remplacer un emplacement ===== */
 const IM={};
 const slug=b=>b.toLowerCase().replace(/[^a-z0-9]+/g,"-");
@@ -224,6 +377,32 @@ function mason(){const t=T[L];$("#gcf").innerHTML=["all","shop","colx","glass","
 function lbShow(){const g=gl[gi];$("#lf").innerHTML=`<div class="lbi" data-img="gallery.${g.n}"></div><figcaption>${T[L][g.c]}</figcaption>`;fill()}
 const lbMove=d=>{gi=(gi+d+gl.length)%gl.length;lbShow()};
 function soc(){const t=T[L];$("#soc").innerHTML=`<a class="btn" target="_blank" rel="noopener" href="${wa(t.wai)}">${t.bi}</a><a class="btn" target="_blank" rel="noopener" href="${wa(t.waa)}">${t.bc}</a><a class="btn" href="#rdv">${t.br}</a>`+[["Instagram",CFG.instagram],["Facebook",CFG.facebook]].filter(s=>s[1]).map(s=>`<a class="btn" href="${s[1]}" target="_blank" rel="noopener">${s[0]}</a>`).join("")}
+
+/* ===== RENDEZ-VOUS : cartes, calendrier, créneaux ===== */
+const LOC={fr:"fr-FR",en:"en-GB",ar:"ar-u-nu-latn",es:"es-ES"};
+const RI=[
+'<circle cx="6.5" cy="14" r="3.5"/><circle cx="17.5" cy="14" r="3.5"/><path d="M10 14q2-1.6 4 0M3 14l1.5-6M21 14l-1.5-6"/>',
+'<path d="M3 10h18M4 10l1 5.5a2 2 0 0 0 2 1.5h1.5a2 2 0 0 0 2-1.8L11 12.5q1-.8 2 0l.5 2.7a2 2 0 0 0 2 1.8H17a2 2 0 0 0 2-1.5L20 10"/>',
+'<rect x="2.5" y="8" width="8" height="7" rx="2.2"/><rect x="13.5" y="8" width="8" height="7" rx="2.2"/><path d="M10.5 11h3"/>',
+'<circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M7.5 9.5a5 5 0 0 1 4-2.5"/>',
+'<path d="M12 3c3.5 4.2 6 7 6 10a6 6 0 0 1-12 0c0-3 2.5-5.8 6-10z"/>',
+'<path d="M4 5h16v11H9l-5 4V5z"/><path d="M8 10h8M8 13h5"/>'];
+const now0=new Date(),rs={sv:new Set(),date:"",time:"",cm:new Date(now0.getFullYear(),now0.getMonth(),1)};
+const iso=d=>d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0");
+const fromIso=s=>{const a=s.split("-").map(Number);return new Date(a[0],a[1]-1,a[2])};
+function rdvSv(){$("#rsg").innerHTML=T[L].rsv.map((n,i)=>`<button type="button" class="rsc" data-rs="${i}" aria-pressed="${rs.sv.has(i)}"><svg viewBox="0 0 24 24" aria-hidden="true">${RI[i]}</svg><b>${n}</b></button>`).join("")}
+function rdvCal(){const t=T[L],y=rs.cm.getFullYear(),m=rs.cm.getMonth(),first=(new Date(y,m,1).getDay()+6)%7,days=new Date(y,m+1,0).getDate(),today=new Date();today.setHours(0,0,0,0);
+const fm=new Intl.DateTimeFormat(LOC[L],{month:"long",year:"numeric"}),fw=new Intl.DateTimeFormat(LOC[L],{weekday:"narrow"}),atStart=y==today.getFullYear()&&m==today.getMonth();
+let h=`<div class="cal-h"><button type="button" data-rmv="-1" aria-label="${t.mp}" ${atStart?"disabled":""}>‹</button><b>${fm.format(rs.cm)}</b><button type="button" data-rmv="1" aria-label="${t.mn}">›</button></div><div class="cal-g">`;
+for(let i=0;i<7;i++)h+=`<span class="cal-w">${fw.format(new Date(2024,0,1+i))}</span>`;
+for(let i=0;i<first;i++)h+="<span></span>";
+for(let d=1;d<=days;d++){const dt=new Date(y,m,d),k=iso(dt);h+=`<button type="button" class="cal-d${dt.getTime()==today.getTime()?" td":""}" data-rd="${k}" aria-pressed="${rs.date==k}" ${dt<today?"disabled":""}>${d}</button>`}
+$("#rcal").innerHTML=h+"</div>"}
+function rdvTimes(){const t=T[L],n=new Date(),isT=rs.date==iso(n);
+$("#rtm").innerHTML=SLOTS.map(s=>{const p=s.split(":").map(Number),late=isT&&(p[0]*60+p[1]<=n.getHours()*60+n.getMinutes());if(late&&rs.time==s)rs.time="";return `<button type="button" class="rtb" data-rt="${s}" aria-pressed="${rs.time==s}" ${late?"disabled":""}>${s}</button>`}).join("");
+$("#rsum").textContent=rs.date?new Intl.DateTimeFormat(LOC[L],{weekday:"long",day:"numeric",month:"long"}).format(fromIso(rs.date))+(rs.time?" · "+rs.time:""):t.sel}
+function rdvAll(){rdvSv();rdvCal();rdvTimes()}
+
 const META={fr:["Opticien Chefchaouen – Centre Optique Chefchaouen","Opticien à Chefchaouen : lunettes de vue et de soleil, magasin de lunettes."],en:["Optician in Chefchaouen – Optical Center Chefchaouen","Optician in Chefchaouen: eyeglasses and sunglasses."],ar:["نظارات شفشاون – مركز البصريات شفشاون","مركز البصريات شفشاون: نظارات طبية وشمسية."],es:["Óptica en Chefchaouen – Centro Óptico Chefchaouen","Óptica en Chefchaouen: gafas y gafas de sol."]};
 const $=s=>document.querySelector(s),q=new URLSearchParams(location.search);
 let L=q.get("lang")||(()=>{try{return localStorage.getItem("lang")}catch(e){}})()||"fr";if(!T[L])L="fr";
@@ -235,11 +414,12 @@ document.querySelectorAll("[data-p]").forEach(e=>e.placeholder=t[e.dataset.p]);
 foot();document.querySelectorAll(".lang").forEach(e=>e.innerHTML=Object.keys(T).map(k=>`<button aria-pressed="${k==L}" data-l="${k}">${k.toUpperCase()}</button>`).join(""));
 $("#sv").innerHTML=t.sv.map((s,i)=>`<article class="sc"><div data-img="services.${i+1}"></div><div class="ov"><h3>${s[1]}</h3><p>${s[2]}</p></div></article>`).join("");
 $("#bg").innerHTML=BRANDS.map(b=>`<button class="sc" data-b="${b}"><div data-img="brands.${slug(b)}"></div><div class="ov"><h3>${b}</h3><p>${t.bp}</p><span>${t.ex}</span></div></button>`).join("");
-const m=encodeURIComponent(CFG.mapsQuery);$("#dir").href=`https://www.google.com/maps/dir/?api=1&destination=${m}`;
+const m=encodeURIComponent(CFG.mapsQuery);$("#dir").href=`https://www.google.com/maps/dir/?api=1&destination=${m}`;$("#hdir").href=`https://www.google.com/maps/dir/?api=1&destination=${m}`;
+$("#hwa").href=wa(t.hwm);$("#hcall").hidden=!CFG.phone;$("#hcall").href=CFG.phone?"tel:"+CFG.phone:"#contact";
 $("#rev").href=CFG.googleReviewsUrl||`https://www.google.com/maps/search/?api=1&query=${m}`;$("#wr").href=CFG.googleWriteReviewUrl||$("#rev").href;
 $("#addr").textContent=t.ad+" : "+(CFG.address||t.tbd);$("#tel").textContent=t.ph+" : "+(CFG.phone||t.tbd);$("#hrs").textContent=t.hr+" : "+(CFG.hours||t.tbd);
 $("#addr").hidden=!CFG.address;$("#tel").hidden=!CFG.phone;$("#hrs").hidden=!CFG.hours;$("#call").hidden=!CFG.phone;$("#call").href=CFG.phone?"tel:"+CFG.phone:"#contact";$("#wa").href=CFG.whatsapp?"https://wa.me/"+CFG.whatsapp:"#contact";
-$("#back").textContent="← "+t.back;gallery();mason();soc();$("#fs").hidden=!FE.length;$("#fx").innerHTML=FE.map((p,i)=>`<article class="sc" tabindex="0" role="button" data-f="${i}"><div data-img="${pk(p)}-1"></div><div class="ov"><h3>${p.brand}</h3><p>${p.name?p.name+" · ":""}${t[p.cat]}</p><span>${t.ex}</span></div></article>`).join("");$("#rs").innerHTML=`<option value="" disabled selected>${t.rsel}</option>`+t.sv.map(s=>`<option>${s[1]}</option>`).join("");$("#fl").innerHTML=t.q.map(x=>`<details><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join("");$("#wf").href=wa(t.wai);$("#wa").href=wa(t.wai);if(!$("#mp").getAttribute("src"))$("#mp").src="https://www.google.com/maps?q="+m+"&output=embed";fill()}
+$("#back").textContent="← "+t.back;gallery();mason();soc();$("#fs").hidden=!FE.length;$("#fx").innerHTML=FE.map((p,i)=>`<article class="sc" tabindex="0" role="button" data-f="${i}"><div data-img="${pk(p)}-1"></div><div class="ov"><h3>${p.brand}</h3><p>${p.name?p.name+" · ":""}${t[p.cat]}</p><span>${t.ex}</span></div></article>`).join("");rdvAll();$("#rn").textContent="";$("#rn").className="";$("#fl").innerHTML=t.q.map(x=>`<details><summary>${x[0]}</summary><p>${x[1]}</p></details>`).join("");$("#wf").href=wa(t.wai);$("#wa").href=wa(t.wai);if(!$("#mp").getAttribute("src"))$("#mp").src="https://www.google.com/maps?q="+m+"&output=embed";fill()}
 function gallery(){queueMicrotask(fill);const t=T[L];$("#gal").hidden=!fb;$("#bg").hidden=!!fb;if(!fb)return;$("#gt").textContent=fb=="*"?t.cl:fb;
 const chip=(k,v,cur,lab)=>`<button class="chip" aria-pressed="${cur==v}" data-${k}="${v}">${lab}</button>`;
 $("#cf").innerHTML=["all","sun","opt"].map(v=>chip("c",v,fc,t[v])).join("");$("#sf").innerHTML=["all","men","women"].map(v=>chip("s",v,fs,v=="all"?t.all:t[v])).join("");
@@ -266,7 +446,35 @@ if(matchMedia("(pointer:fine)").matches&&!rm)addEventListener("pointermove",e=>{
 render();
 setTimeout(()=>$("#ld").classList.add("off"),rm?0:1500);
 $("#pmain").onmousemove=e=>{const r=e.currentTarget.getBoundingClientRect(),i=e.currentTarget.querySelector("img");if(i)i.style.transformOrigin=(e.clientX-r.left)/r.width*100+"% "+(e.clientY-r.top)/r.height*100+"%"};
-$("#rf").onsubmit=e=>{e.preventDefault();const d=new FormData(e.target),t=T[L];open(wa([t.rm,d.get("n")+" / "+d.get("t"),d.get("s"),d.get("d")+" "+d.get("h"),d.get("m")||""].join(" | ")),"_blank","noopener");$("#rn").textContent=t.rok};
+
+/* ----- Hero : menu « Prendre rendez-vous » (WhatsApp / Appel) ----- */
+const hpop=$("#hpop"),hrb=$("#hrb"),hset=o=>{hpop.classList.toggle("on",o);hrb.setAttribute("aria-expanded",o)};
+hrb.onclick=e=>{e.stopPropagation();hset(!hpop.classList.contains("on"))};
+hpop.onclick=e=>{if(e.target.closest("a"))setTimeout(()=>hset(false),80)};
+document.addEventListener("click",e=>{if(!e.target.closest(".hr"))hset(false)});
+addEventListener("keydown",e=>{if(e.key=="Escape")hset(false)});
+
+/* ----- Section rendez-vous : interactions + message WhatsApp ----- */
+document.addEventListener("click",e=>{const b=e.target.closest("#rdv button");if(!b)return;
+document.querySelectorAll("#rdv .bad").forEach(x=>x.classList.remove("bad"));
+if(b.dataset.rs!=null){const i=+b.dataset.rs;rs.sv.has(i)?rs.sv.delete(i):rs.sv.add(i);b.setAttribute("aria-pressed",rs.sv.has(i))}
+else if(b.dataset.rmv){rs.cm=new Date(rs.cm.getFullYear(),rs.cm.getMonth()+ +b.dataset.rmv,1);rdvCal();const n=$(`#rcal [data-rmv="${b.dataset.rmv}"]`);if(n&&!n.disabled)n.focus()}
+else if(b.dataset.rd){rs.date=b.dataset.rd;rdvCal();rdvTimes();const n=$(`#rcal [data-rd="${rs.date}"]`);if(n)n.focus()}
+else if(b.dataset.rt){rs.time=b.dataset.rt;rdvTimes();const n=$(`#rtm [data-rt="${rs.time}"]`);if(n)n.focus()}});
+document.querySelectorAll("#rname,#rtel").forEach(i=>i.addEventListener("input",()=>$("#rs3").classList.remove("bad")));
+$("#rf").onsubmit=e=>{e.preventDefault();const t=T[L],n=$("#rname").value.trim(),p=$("#rtel").value.trim(),m=$("#rmsg").value.trim(),out=$("#rn");
+document.querySelectorAll("#rdv .bad").forEach(x=>x.classList.remove("bad"));
+const fail=(msg,step,el)=>{out.className="rerr";out.textContent=msg;$(step).classList.add("bad");$(step).scrollIntoView({behavior:"smooth",block:"center"});if(el)el.focus({preventScroll:true})};
+if(!rs.sv.size)return fail(t.e1,"#rs1");
+if(!rs.date)return fail(t.e2,"#rs2");
+if(!rs.time)return fail(t.e3,"#rs2");
+if(n.length<2)return fail(t.e4,"#rs3",$("#rname"));
+if(p.replace(/\D/g,"").length<6)return fail(t.e5,"#rs3",$("#rtel"));
+const l=t.ml,dd=new Intl.DateTimeFormat(LOC[L],{weekday:"long",day:"numeric",month:"long",year:"numeric"}).format(fromIso(rs.date)),
+sv=[...rs.sv].sort((a,b)=>a-b).map(i=>t.rsv[i]).join(", "),
+body=[t.wm,"",`${l[0]} : ${n}`,`${l[1]} : ${p}`,`${l[2]} : ${sv}`,`${l[3]} : ${dd}`,`${l[4]} : ${rs.time}`].concat(m?[`${l[5]} : ${m}`]:[],["",t.mf]).join("\n");
+open(wa(body),"_blank","noopener");out.className="rok";out.textContent=t.rok};
+
 if(matchMedia("(pointer:fine)").matches&&!rm){const c=$("#cur");addEventListener("pointermove",e=>{c.style.transform=`translate(${e.clientX}px,${e.clientY}px)`});document.addEventListener("pointerover",e=>{const h=e.target.closest("a,button,[data-p],[data-f],.it");c.style.width=c.style.height=h?"56px":"34px";c.style.margin=h?"-28px":"-17px"})}
 addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.matches&&e.target.matches(".prod,[data-f]"))e.target.click();if(e.key=="Escape")$("#pm").hidden=true;if($("#lb").hidden)return;if(e.key=="Escape")$("#lb").hidden=true;if(e.key=="ArrowRight")lbMove(1);if(e.key=="ArrowLeft")lbMove(-1)});
 if(window.gsap&&window.ScrollTrigger&&!rm){gsap.registerPlugin(ScrollTrigger);gsap.to(".hero .hp",{yPercent:-6,ease:"none",scrollTrigger:{trigger:".hero",scrub:true,start:"top top",end:"bottom top"}});gsap.from(".mas .it",{opacity:0,y:40,stagger:.08,duration:.9,scrollTrigger:{trigger:"#mas",start:"top 85%"}})}
