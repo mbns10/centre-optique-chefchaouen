@@ -527,6 +527,26 @@ font-size:clamp(2rem,4.6vw,4.2rem);line-height:1.04;letter-spacing:.015em;text-s
 #lf .lbi{width:min(88vw,1240px);height:min(70svh,820px);aspect-ratio:auto;background:none;border-radius:14px}
 #lf figcaption{font:italic 500 1.3rem var(--serif);margin-top:8px}
 #lf figcaption small{margin-inline-start:14px;font:400 .8rem var(--sans);letter-spacing:.12em;opacity:.6}
+/* ===== SECTION VIDÉO CINÉMATIQUE ===== */
+section.vid{padding:96px 0 0;background:var(--bg2)!important;overflow:hidden}
+.vid-h{margin-bottom:0}
+.vid-h h2{margin-bottom:14px}
+.vid-h p{margin:0 0 40px;max-width:56ch;color:rgba(51,40,32,.82)}
+.vid-h p.rv{transition-delay:.15s}
+.vid .frame{position:relative;display:block;width:100%;height:80vh;min-height:600px;max-height:850px;aspect-ratio:auto;margin:0;padding:0;border:0;border-radius:28px 28px 0 0;box-shadow:none;overflow:hidden;background:var(--bg2) url("assets/images/gallery/video-poster.jpg") center/cover no-repeat;transition:opacity 1.3s cubic-bezier(.2,.7,.2,1),transform 1.3s cubic-bezier(.2,.7,.2,1)}
+.vid video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1s;transform-origin:50% 50%;animation:vidZoom 30s ease-in-out infinite alternate}
+.vid video.on{opacity:1}
+@keyframes vidZoom{from{transform:scale(1)}to{transform:scale(1.07)}}
+/* overlay discret + fondu vers la section suivante */
+.vid-ov{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,#F5F1E9 0,rgba(245,241,233,0) 16%),linear-gradient(180deg,rgba(51,40,32,.22) 0,rgba(51,40,32,0) 28%,rgba(51,40,32,0) 60%,rgba(51,40,32,.28) 100%)}
+.vid .snd{z-index:2;bottom:clamp(28px,5vh,56px);inset-inline-end:clamp(14px,3vw,36px);min-height:44px;padding:8px 18px;font:500 .85rem var(--sans);background:rgba(255,254,250,.88);color:var(--text);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .3s,color .3s}
+.vid .snd:hover{background:var(--white)}
+.vid .snd[aria-pressed=true]{background:var(--slate);color:var(--white)}
+@media(max-width:820px){
+section.vid{padding:64px 0 0}
+.vid-h p{margin-bottom:28px}
+.vid .frame{height:70vh;height:70svh;min-height:450px;max-height:none;border-radius:20px 20px 0 0}
+}
 </style>
 </head>
 <body>
@@ -552,11 +572,14 @@ font-size:clamp(2rem,4.6vw,4.2rem);line-height:1.04;letter-spacing:.015em;text-s
 <a class="sd" href="#services" aria-label="Défiler"></a>
 </header>
 
-<section class="vid"><div class="w"><h2 data-i="vt"></h2><p data-i="vs" style="margin:-10px 0 26px;opacity:.85"></p>
-<div class="frame" id="frame">
-<!-- Remplacez data-src par la vraie vidéo : /videos/centre.mp4 (et poster par /images/couverture.webp) -->
-<video id="v" muted loop playsinline preload="none" data-src="assets/videos/centre.mp4" poster="assets/images/gallery/accueil-bureau.jpg" aria-label="Vidéo du centre optique"></video>
-<div data-img="video.cover" style="position:absolute;inset:0;border-radius:0"></div><div class="ph2" id="ph" data-i="vph"></div><button class="play" id="pl" aria-label="Play">▶</button><button class="snd" id="snd" data-i="snd"></button><i class="pb" id="pb"></i></div></div></section>
+<section class="vid" id="video">
+<div class="w vid-h"><h2 data-i="vt"></h2><p class="rv" data-i="vs"></p></div>
+<div class="frame rv" id="frame">
+<video id="v" src="assets/videos/centre.mp4" poster="assets/images/gallery/video-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du Centre Optique Chefchaouen"></video>
+<div class="vid-ov"></div>
+<button class="snd" id="snd" type="button" aria-pressed="false" data-i="snd"></button>
+</div>
+</section>
 
 <section id="services"><div class="w"><h2 data-i="st"></h2><div class="grid" id="sv"></div></div></section>
 
@@ -757,12 +780,20 @@ else if(x.dataset.b){fb=x.dataset.b;fc=fs="all";gallery();$("#brands").scrollInt
 else if(x.id=="back"){fb=null;gallery()}else if(x.dataset.g){gi=+x.dataset.g;lbShow();$("#lb").hidden=false}else if(x.dataset.gc){gc=x.dataset.gc;mason()}else if(x.id=="lx")$("#lb").hidden=true;else if(x.id=="lp")lbMove(-1);else if(x.id=="ln")lbMove(1);else if(x.id=="px")$("#pm").hidden=true;else if(x.dataset.pt){pv=+x.dataset.pt;pmain()}else if(x.id=="psh")share();else if(x.dataset.c){fc=x.dataset.c;gallery()}else if(x.dataset.s){fs=x.dataset.s;gallery()}});
 $("#f").onsubmit=e=>{e.preventDefault();const d=new FormData(e.target),b=`${d.get("n")} (${d.get("e")}): ${d.get("m")}`;
 location.href=CFG.whatsapp?`https://wa.me/${CFG.whatsapp}?text=${encodeURIComponent(b)}`:`mailto:${CFG.email}?body=${encodeURIComponent(b)}`};
-/* Vidéo : lecture auto muette quand visible, bouton son */
-const v=$("#v"),src=v.dataset.src;if(src){v.src=src;$("#ph").hidden=true;$("#pl").onclick=()=>{$("#frame [data-img]").hidden=true;$("#pl").hidden=true;v.play()};v.ontimeupdate=()=>$("#pb").style.width=v.currentTime/v.duration*100+"%"}else{$("#snd").hidden=true;$("#pl").hidden=true}
-$("#snd").onclick=()=>{v.muted=!v.muted};if(!src)$("#ph").hidden=true;
-/* Zoom subtil au scroll + révélations */
-const fr=$("#frame"),rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
-if(!rm)addEventListener("scroll",()=>{const r=fr.getBoundingClientRect(),p=Math.min(1,Math.max(0,1-Math.abs(r.top+r.height/2-innerHeight/2)/innerHeight));fr.style.transform=`scale(${.94+.06*p})`},{passive:true});
+/* Vidéo : autoplay muet en boucle, pause hors écran, repli sur le poster */
+const v=$("#v"),fr=$("#frame"),rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+let vis=false;
+v.muted=true;v.defaultMuted=true;v.setAttribute("muted","");
+const tryPlay=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{})};
+v.addEventListener("playing",()=>v.classList.add("on"));
+v.addEventListener("error",()=>{v.classList.remove("on");$("#snd").hidden=true;console.warn("Vidéo introuvable ou illisible : assets/videos/centre.mp4")});
+if(rm){v.removeAttribute("autoplay");v.pause()}
+else{
+new IntersectionObserver(es=>es.forEach(e=>{vis=e.isIntersecting;vis?tryPlay():v.pause()}),{threshold:.2}).observe(fr);
+/* si le navigateur bloque l'autoplay (économie d'énergie iOS…), on réessaie au premier toucher */
+["touchstart","pointerdown","keydown"].forEach(ev=>addEventListener(ev,()=>{if(vis&&v.paused)tryPlay()},{once:true,passive:true}));
+document.addEventListener("visibilitychange",()=>{if(document.hidden)v.pause();else if(vis)tryPlay()})}
+$("#snd").onclick=e=>{v.muted=!v.muted;e.currentTarget.setAttribute("aria-pressed",!v.muted);if(v.paused)tryPlay()};
 document.querySelectorAll("section h2,.grid,.about p,.chips,.pair,#reviews .ab>*,#faq details").forEach(e=>e.classList.add("rv"));
 const io=new IntersectionObserver(a=>a.forEach(i=>i.isIntersecting&&(i.target.classList.add("in"),io.unobserve(i.target))),{threshold:.1});document.querySelectorAll(".rv").forEach(e=>io.observe(e));
 /* ----- Navbar : état réduit au scroll, section active, menu mobile ----- */
