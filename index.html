@@ -527,25 +527,46 @@ font-size:clamp(2rem,4.6vw,4.2rem);line-height:1.04;letter-spacing:.015em;text-s
 #lf .lbi{width:min(88vw,1240px);height:min(70svh,820px);aspect-ratio:auto;background:none;border-radius:14px}
 #lf figcaption{font:italic 500 1.3rem var(--serif);margin-top:8px}
 #lf figcaption small{margin-inline-start:14px;font:400 .8rem var(--sans);letter-spacing:.12em;opacity:.6}
-/* ===== SECTION VIDÉO CINÉMATIQUE ===== */
-section.vid{padding:96px 0 0;background:var(--bg2)!important;overflow:hidden}
-.vid-h{margin-bottom:0}
-.vid-h h2{margin-bottom:14px}
-.vid-h p{margin:0 0 40px;max-width:56ch;color:rgba(51,40,32,.82)}
-.vid-h p.rv{transition-delay:.15s}
-.vid .frame{position:relative;display:block;width:100%;height:80vh;min-height:600px;max-height:850px;aspect-ratio:auto;margin:0;padding:0;border:0;border-radius:28px 28px 0 0;box-shadow:none;overflow:hidden;background:var(--bg2) url("assets/images/gallery/video-poster.jpg") center/cover no-repeat;transition:opacity 1.3s cubic-bezier(.2,.7,.2,1),transform 1.3s cubic-bezier(.2,.7,.2,1)}
-.vid video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:center;opacity:0;transition:opacity 1s;transform-origin:50% 50%;animation:vidZoom 30s ease-in-out infinite alternate}
+/* ===== SECTION VIDÉO : immersive, titre intégré ===== */
+section.vid{padding:0;margin:0;background:#2a2019!important;color:#FFFEFA!important;overflow:hidden}
+.vid .frame{position:relative;display:block;width:100%;height:85vh;min-height:650px;max-height:900px;aspect-ratio:auto;margin:0;padding:0;border:0;border-radius:0;box-shadow:none;overflow:hidden;transform:none;
+background:#2a2019 url("assets/images/gallery/video-poster.jpg") center/cover no-repeat,#2a2019 url("assets/images/gallery/accueil-bureau.jpg") center/cover no-repeat}
+.vid video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;object-position:60% 55%;opacity:0;transition:opacity 1.2s;transform-origin:50% 50%;animation:vidZoom 30s ease-in-out infinite alternate}
 .vid video.on{opacity:1}
-@keyframes vidZoom{from{transform:scale(1)}to{transform:scale(1.07)}}
-/* overlay discret + fondu vers la section suivante */
-.vid-ov{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(0deg,#F5F1E9 0,rgba(245,241,233,0) 16%),linear-gradient(180deg,rgba(51,40,32,.22) 0,rgba(51,40,32,0) 28%,rgba(51,40,32,0) 60%,rgba(51,40,32,.28) 100%)}
-.vid .snd{z-index:2;bottom:clamp(28px,5vh,56px);inset-inline-end:clamp(14px,3vw,36px);min-height:44px;padding:8px 18px;font:500 .85rem var(--sans);background:rgba(255,254,250,.88);color:var(--text);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .3s,color .3s}
+@keyframes vidZoom{from{transform:scale(1)}to{transform:scale(1.06)}}
+/* dégradé : sombre à gauche (texte), vidéo visible à droite */
+.vid-ov{position:absolute;inset:0;z-index:1;pointer-events:none;background:
+linear-gradient(90deg,rgba(33,25,19,.78) 0,rgba(33,25,19,.5) 34%,rgba(33,25,19,.12) 62%,transparent 80%),
+linear-gradient(0deg,rgba(33,25,19,.35) 0,transparent 30%),
+linear-gradient(180deg,rgba(33,25,19,.3) 0,transparent 22%)}
+[dir=rtl] .vid-ov{background:
+linear-gradient(270deg,rgba(33,25,19,.78) 0,rgba(33,25,19,.5) 34%,rgba(33,25,19,.12) 62%,transparent 80%),
+linear-gradient(0deg,rgba(33,25,19,.35) 0,transparent 30%),
+linear-gradient(180deg,rgba(33,25,19,.3) 0,transparent 22%)}
+/* texte intégré à gauche */
+.vid-c{position:absolute;inset:0;z-index:2;width:100%;margin:auto;display:flex;flex-direction:column;justify-content:center}
+.vid-t{max-width:600px}
+.vid .vid-t h2{max-width:11ch;margin:0 0 16px;padding-top:0;color:#FFFEFA;font-size:clamp(2.3rem,5vw,4.3rem);line-height:1.04;letter-spacing:.01em;text-shadow:0 2px 26px rgba(0,0,0,.35)}
+.vid .vid-t h2:before{display:none}
+.vid .vid-t p{max-width:30ch;margin:0;color:#E5D9C8;font:italic 500 clamp(1.15rem,2.2vw,1.7rem)/1.35 var(--serif);text-shadow:0 1px 14px rgba(0,0,0,.35)}
+.vid .vid-t p.rv{transition-delay:.25s}
+[dir=rtl] .vid .vid-t p{font-family:Cairo,var(--sans);font-style:normal}
+/* bouton son discret */
+.vid .snd{z-index:3;bottom:clamp(44px,7vh,64px);inset-inline-end:clamp(14px,3vw,36px);min-height:44px;padding:8px 18px;font:500 .85rem var(--sans);background:rgba(255,254,250,.85);color:var(--text);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);transition:background .3s,color .3s}
 .vid .snd:hover{background:var(--white)}
 .vid .snd[aria-pressed=true]{background:var(--slate);color:var(--white)}
+/* transition : la section Services recouvre le bas de la vidéo */
+#services{position:relative;z-index:3;margin-top:-32px;padding:52px 0 64px;border-radius:32px 32px 0 0;box-shadow:0 -18px 40px rgba(33,25,19,.12)}
+@media(min-width:821px){#services{padding:80px 0 96px}}
+/* téléphone */
 @media(max-width:820px){
-section.vid{padding:64px 0 0}
-.vid-h p{margin-bottom:28px}
-.vid .frame{height:70vh;height:70svh;min-height:450px;max-height:none;border-radius:20px 20px 0 0}
+.vid .frame{height:75vh;height:75svh;min-height:500px;max-height:none}
+.vid video{object-position:65% 50%}
+.vid-ov,[dir=rtl] .vid-ov{background:linear-gradient(0deg,rgba(33,25,19,.85) 0,rgba(33,25,19,.5) 45%,rgba(33,25,19,.12) 100%),linear-gradient(180deg,rgba(33,25,19,.35) 0,transparent 25%)}
+.vid-c{justify-content:flex-end;padding-bottom:84px}
+.vid .vid-t h2{max-width:none;font-size:clamp(2rem,9vw,3rem)}
+.vid .snd{bottom:18px}
+#services{margin-top:-24px;border-radius:24px 24px 0 0}
 }
 </style>
 </head>
@@ -573,10 +594,10 @@ section.vid{padding:64px 0 0}
 </header>
 
 <section class="vid" id="video">
-<div class="w vid-h"><h2 data-i="vt"></h2><p class="rv" data-i="vs"></p></div>
-<div class="frame rv" id="frame">
+<div class="frame" id="frame">
 <video id="v" src="assets/videos/centre.mp4" poster="assets/images/gallery/video-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du Centre Optique Chefchaouen"></video>
 <div class="vid-ov"></div>
+<div class="w vid-c"><div class="vid-t"><h2 data-i="vt"></h2><p class="rv" data-i="vs"></p></div></div>
 <button class="snd" id="snd" type="button" aria-pressed="false" data-i="snd"></button>
 </div>
 </section>
