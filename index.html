@@ -8,7 +8,6 @@
 <link rel="canonical" href="https://VOTRE-DOMAINE.ma/">
 <link rel="alternate" hreflang="fr" href="https://VOTRE-DOMAINE.ma/?lang=fr"><link rel="alternate" hreflang="en" href="https://VOTRE-DOMAINE.ma/?lang=en"><link rel="alternate" hreflang="ar" href="https://VOTRE-DOMAINE.ma/?lang=ar"><link rel="alternate" hreflang="es" href="https://VOTRE-DOMAINE.ma/?lang=es">
 <meta property="og:title" content="Centre Optique Chefchaouen"><meta property="og:type" content="website"><meta property="og:description" content="Opticien à Chefchaouen : lunettes de vue et de soleil."><meta name="robots" content="index,follow,max-image-preview:large"><meta name="theme-color" content="#F5F1E9"><meta name="twitter:card" content="summary_large_image">
-<link rel="preload" as="image" href="assets/images/gallery/accueil-bureau.jpg" fetchpriority="high">
 <meta property="og:image" content="https://VOTRE-DOMAINE.ma/assets/images/gallery/accueil-bureau.jpg">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23554438'/%3E%3Cg fill='none' stroke='%23C7B69F' stroke-width='4'%3E%3Ccircle cx='20' cy='34' r='11'/%3E%3Ccircle cx='44' cy='34' r='11'/%3E%3C/g%3E%3C/svg%3E">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Optician","name":"Centre Optique Chefchaouen","address":{"@type":"PostalAddress","addressLocality":"Chefchaouen","addressCountry":"MA"}}</script>
@@ -726,6 +725,30 @@ footer#ftr{padding:72px 0 96px;border-radius:24px 24px 0 0;margin-top:-24px}
 }
 @supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.fp{background:rgba(255,254,250,.14)}}
 @media(prefers-reduced-motion:reduce){.fp{opacity:1}footer#ftr:before{animation:none}}
+
+/* ===== NAV : cône de lumière champagne ===== */
+.nb-ind{top:-16px;height:calc(100% + 16px);margin-top:0;border:0;border-radius:0;box-shadow:none;
+background:linear-gradient(180deg,rgba(255,236,196,.6),rgba(255,236,196,0) 100%);
+clip-path:polygon(28% 0,72% 0,100% 100%,0 100%);
+transition:transform .55s cubic-bezier(.3,1.2,.4,1),width .55s cubic-bezier(.3,1.2,.4,1),opacity .3s,top .4s,height .4s}
+.nb-ind:before{content:"";position:absolute;left:28%;right:28%;top:0;height:3px;border-radius:0 0 4px 4px;background:#F3DDB0;box-shadow:0 0 10px rgba(243,221,176,.9)}
+.nb.s .nb-ind{top:-10px;height:calc(100% + 10px);border:0;box-shadow:none;background:linear-gradient(180deg,rgba(161,141,119,.4),rgba(161,141,119,0) 100%)}
+.nb.s .nb-ind:before{background:var(--taupe);box-shadow:0 0 8px rgba(161,141,119,.6)}
+.nb{background:linear-gradient(135deg,rgba(255,248,232,.28),rgba(229,217,200,.12) 55%,rgba(240,222,186,.2))}
+
+/* ===== FOOTER : mot géant vu à travers le verre ===== */
+.fword{position:absolute;left:50%;bottom:-.06em;z-index:0;translate:-50% 0;font:600 clamp(2.6rem,12.2vw,13rem)/.8 var(--serif);letter-spacing:.02em;white-space:nowrap;pointer-events:none;user-select:none;
+background:linear-gradient(180deg,rgba(236,214,170,.62),rgba(161,141,119,.14));-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
+footer#ftr{padding-bottom:clamp(90px,12vw,190px)}
+.fbar{position:relative;z-index:2;margin-top:18px;margin-bottom:calc(-1 * clamp(28px,4.5vw,70px));padding:16px 22px;border:1px solid rgba(255,254,250,.22);border-radius:18px;
+background:linear-gradient(145deg,rgba(255,254,250,.16),rgba(229,217,200,.06));
+box-shadow:0 16px 40px rgba(0,0,0,.25),inset 0 1px 0 rgba(255,255,255,.35);
+-webkit-backdrop-filter:blur(16px) saturate(1.3);backdrop-filter:blur(16px) saturate(1.3)}
+@media(max-width:620px){footer#ftr{padding-bottom:112px}.fbar{margin-bottom:-18px;padding:16px}}
+@supports not ((-webkit-backdrop-filter:blur(1px)) or (backdrop-filter:blur(1px))){.fbar{background:rgba(255,254,250,.14)}}
+/* onde « liquide » au clic */
+.rip{position:absolute;left:var(--x);top:var(--y);width:12px;height:12px;margin:-6px;border-radius:50%;border:1.5px solid rgba(243,221,176,.85);pointer-events:none;animation:rip .9s ease-out forwards}
+@keyframes rip{to{transform:scale(18);opacity:0}}
 </style>
 </head>
 <body>
@@ -797,7 +820,7 @@ footer#ftr{padding:72px 0 96px;border-radius:24px 24px 0 0;margin-top:-24px}
 <p id="addr"></p><p id="tel"></p><p id="hrs"></p>
 <div class="b"><a class="btn p" id="call" data-i="b1"></a><a class="btn" id="wa" target="_blank" rel="noopener" data-i="b2"></a></div><div class="b" id="soc"></div></div>
 <form id="f"><input name="n" required data-p="fn"><input name="e" type="email" required data-p="fe"><textarea name="m" rows="4" required data-p="fm"></textarea><button class="btn p" data-i="send"></button></form></div></div></section>
-<footer id="ftr"><div class="w"><div class="fg rv" id="ft"></div><div class="fbar"><p>© 2026 Centre Optique Chefchaouen</p><div id="fleg"></div></div></div></footer>
+<footer id="ftr"><div class="fword" aria-hidden="true">CHEFCHAOUEN</div><div class="w"><div class="fg rv" id="ft"></div><div class="fbar"><p>© 2026 Centre Optique Chefchaouen</p><div id="fleg"></div></div></div></footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
 <script>
@@ -859,6 +882,7 @@ wm:"Hola, me gustaría solicitar una cita en el Centro Óptico Chefchaouen.",ml:
 for(const l in X)Object.assign(T[l],X[l],X2[l],X3[l]);
 const NV={fr:{nh:"Accueil",nc:"Collections",nr:"Avis clients",nl:"Menu principal"},en:{nh:"Home",nc:"Collections",nr:"Reviews",nl:"Main menu"},ar:{nh:"الرئيسية",nc:"المجموعات",nr:"آراء الزبناء",nl:"القائمة الرئيسية"},es:{nh:"Inicio",nc:"Colecciones",nr:"Opiniones",nl:"Menú principal"}};
 for(const l in NV)Object.assign(T[l],NV[l]);
+const FT={fr:{ftn:"Navigation",fts:"Suivez-nous"},en:{ftn:"Navigation",fts:"Follow us"},ar:{ftn:"التنقل",fts:"تابعونا"},es:{ftn:"Navegación",fts:"Síguenos"}};for(const l in FT)Object.assign(T[l],FT[l]);
 /* ===== IMAGES : un seul endroit. Ajoutez "clé":["assets/images/dossier/fichier.webp","texte ALT"] pour remplacer un emplacement ===== */
 /* Photos réelles du magasin : déposez vos 2 fichiers dans assets/images/gallery/ (ou changez les 2 chemins ci-dessous) */
 const PH1="assets/images/gallery/accueil-bureau.jpg",PH2="assets/images/gallery/presentoirs-homme-femme.jpg",
@@ -911,7 +935,25 @@ function brandsPlace(){const n=BRANDS.length;
 document.querySelectorAll("#bg .bc").forEach((c,i)=>{c.dataset.d=Math.min((i-bi+n)%n,3)});
 document.querySelectorAll("#bg .bn").forEach((b,i)=>b.setAttribute("aria-pressed",i==bi));
 const c=$("#bcta");if(c)c.href=wa(T[L].wad+BRANDS[bi])}
-function foot(){const t=T[L],m=encodeURIComponent(CFG.mapsQuery),a=(h,x)=>`<a href="${h}" target="_blank" rel="noopener">${x}</a>`;$("#ft").innerHTML=`<div><h3>CENTRE OPTIQUE CHEFCHAOUEN</h3><p>${t.fa}</p><div class="lang"></div></div><div><h3>${t.n2}</h3>${BRANDS.slice(0,6).map(b=>`<a href="#brands" data-b="${b}">${b}</a>`).join("")}</div><div><h3>Menu</h3>${[["services","n1"],["gallery","n5"],["brands","n2"],["about","n3"],["rdv","br"],["faq","fq"],["contact","n4"]].map(s=>`<a href="#${s[0]}">${t[s[1]]}</a>`).join("")}</div><div><h3>${t.ct}</h3>${[CFG.address,CFG.phone,CFG.hours].filter(Boolean).map(x=>`<p>${x}</p>`).join("")}${a(wa(t.wai),"WhatsApp")}${CFG.instagram?a(CFG.instagram,"Instagram"):""}${CFG.facebook?a(CFG.facebook,"Facebook"):""}${a("https://www.google.com/maps/search/?api=1&query="+m,"Google Maps")}${CFG.legalUrl?a(CFG.legalUrl,t.lg):""}<details><summary style="font-size:1rem">${t.pv}</summary><p>${t.pvt}</p></details></div>`}
+function foot(){const t=T[L],m=encodeURIComponent(CFG.mapsQuery),
+I=p=>`<svg viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`,
+P={pin:'<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
+tel:'<path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/>',
+wa:'<path d="M3 21l1.65-4.9A8.5 8.5 0 1 1 8 19.4L3 21z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2L9 8.5z"/>',
+clock:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/>',
+ig:'<rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.2 6.9h.01"/>',
+fb:'<path d="M14 8.5h2.5V4.5H14a4 4 0 0 0-4 4V11H7.5v4H10v5.5h4V15h2.3l.7-4H14V8.8c0-.2.1-.3.3-.3z"/>'},
+ext=(h,ic,x,c="")=>`<a class="fk ${c}" href="${h}" target="_blank" rel="noopener">${I(P[ic])}<span>${x}</span></a>`,
+row=(ic,x)=>`<p class="fk">${I(P[ic])}<span>${x}</span></p>`,
+nav=[["#home","nh"],["#services","n1"],["#brands","nc"],["#gallery","n5"],["#about","n3"],["#contact","n4"]].map(s=>`<a class="fk" href="${s[0]}"><span>${t[s[1]]}</span></a>`).join(""),
+bm=BRANDS.map(b=>`<a href="#brands" data-b="${b}">${b}</a>`).join(""),
+ct=[CFG.address&&row("pin",CFG.address),CFG.phone&&`<a class="fk" href="tel:${CFG.phone}">${I(P.tel)}<span>${CFG.phone}</span></a>`,ext(wa(t.wai),"wa","WhatsApp"),CFG.hours&&row("clock",CFG.hours),ext("https://www.google.com/maps/search/?api=1&query="+m,"pin","Google Maps")].filter(Boolean).join(""),
+so=[CFG.instagram&&ext(CFG.instagram,"ig","Instagram","soc"),CFG.facebook&&ext(CFG.facebook,"fb","Facebook","soc"),ext(wa(t.wai),"wa","WhatsApp","soc")].filter(Boolean).join("");
+$("#ft").innerHTML=`<div class="fp"><div class="flogo"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="9.5" cy="19" r="5.5"/><circle cx="22.5" cy="19" r="5.5"/><path d="M15 18.2q1-1.2 2 0M4.2 17.5L6 9.5M27.8 17.5L26 9.5"/></svg><div><b>Centre Optique</b><small>CHEFCHAOUEN</small></div></div><p class="fsl">${t.slogan}</p><p class="fdesc">${t.fa}</p><div class="lang"></div></div>
+<nav class="fp" aria-label="${t.ftn}"><h3 class="fh">${t.ftn}</h3>${nav}<div class="bm" style="margin-top:12px">${bm}</div></nav>
+<div class="fp"><h3 class="fh">${t.ct}</h3>${ct}</div>
+<div class="fp"><h3 class="fh">${t.fts}</h3>${so}</div>`;
+$("#fleg").innerHTML=(CFG.legalUrl?`<a href="${CFG.legalUrl}" target="_blank" rel="noopener">${t.lg}</a>`:"")+`<details><summary>${t.pv}</summary><p>${t.pvt}</p></details>`}
 const GAL=["glass","shop","shop","world","glass","world","world","world"];
 function mason(){const t=T[L];$("#gcf").innerHTML=["all",...new Set(GAL)].map(v=>`<button class="chip" aria-pressed="${gc==v}" data-gc="${v}">${t[v]}</button>`).join("");gl=GAL.map((c,i)=>({c,n:i+1})).filter(g=>gc=="all"||g.c==gc);$("#mas").className="mas"+(gl.length<=2?" two":gl.length>=8?" big":"");$("#mas").innerHTML=gl.map((g,i)=>`<button class="it" data-g="${i}" aria-label="${GCAP[L][g.n-1]}"><div data-img="gallery.${g.n}"></div><span class="cap">${GCAP[L][g.n-1]}</span></button>`).join("");fill()}
 function lbShow(){const g=gl[gi];$("#lf").innerHTML=`<div class="lbi" data-img="gallery.${g.n}"></div><figcaption>${GCAP[L][g.n-1]}<small>${gi+1} / ${gl.length}</small></figcaption>`;fill()}
@@ -953,7 +995,6 @@ document.querySelectorAll("[data-i]").forEach(e=>e.textContent=t[e.dataset.i]);
 document.querySelectorAll("[data-p]").forEach(e=>e.placeholder=t[e.dataset.p]);
 foot();document.querySelectorAll(".lang").forEach(e=>e.innerHTML=Object.keys(T).map(k=>`<button aria-pressed="${k==L}" data-l="${k}">${k.toUpperCase()}</button>`).join(""));
 $("#sv").innerHTML=t.sv.map((s,i)=>`<article class="sc"><div data-img="services.${i+1}"></div><div class="ov"><h3>${s[1]}</h3><p>${s[2]}</p></div></article>`).join("");
-$("#bg").innerHTML=BRANDS.map(b=>`<button class="sc" data-b="${b}"><div data-img="brands.${slug(b)}"></div><div class="ov"><h3>${b}</h3><p>${t.bp}</p><span>${t.ex}</span></div></button>`).join("");
 brandsUI();
 const m=encodeURIComponent(CFG.mapsQuery);$("#dir").href=`https://www.google.com/maps/dir/?api=1&destination=${m}`;
 $("#rev").href=CFG.googleReviewsUrl||`https://www.google.com/maps/search/?api=1&query=${m}`;$("#wr").href=CFG.googleWriteReviewUrl||$("#rev").href;
@@ -1027,19 +1068,41 @@ open(wa(body),"_blank","noopener");out.className="rok";out.textContent=t.rok};
 
 if(matchMedia("(pointer:fine)").matches&&!rm){const c=$("#cur");addEventListener("pointermove",e=>{c.style.transform=`translate(${e.clientX}px,${e.clientY}px)`});document.addEventListener("pointerover",e=>{const h=e.target.closest("a,button,[data-p],[data-f],.it");c.style.width=c.style.height=h?"56px":"34px";c.style.margin=h?"-28px":"-17px"})}
 addEventListener("keydown",e=>{if(e.key=="Enter"&&e.target.matches&&e.target.matches(".prod,[data-f]"))e.target.click();if(e.key=="Escape")$("#pm").hidden=true;if($("#lb").hidden)return;if(e.key=="Escape")$("#lb").hidden=true;if(e.key=="ArrowRight")lbMove(1);if(e.key=="ArrowLeft")lbMove(-1)});
-if(window.gsap&&window.ScrollTrigger&&!rm){gsap.registerPlugin(ScrollTrigger);
-gsap.from(".fl",{opacity:0,scale:.8,rotate:"+=10deg",stagger:.12,duration:1.1,ease:"power2.out"});
-gsap.from(".vid-t .rv",{opacity:0,y:30,duration:.9,scrollTrigger:{trigger:".vid",start:"top 75%"}});
-gsap.from("#sv .sc",{opacity:0,y:35,stagger:.06,duration:.85,scrollTrigger:{trigger:"#services",start:"top 80%"}});
-gsap.from(".bc",{opacity:0,scale:.9,stagger:.08,duration:.9,scrollTrigger:{trigger:"#brands",start:"top 78%"}});
-gsap.from(".mas .it",{opacity:0,y:40,stagger:.08,duration:.9,scrollTrigger:{trigger:"#mas",start:"top 85%"}});
-gsap.from("#about .rv",{opacity:0,y:30,duration:.9,scrollTrigger:{trigger:"#about",start:"top 78%"}});
-gsap.from("#reviews .rv",{opacity:0,y:30,duration:.9,scrollTrigger:{trigger:"#reviews",start:"top 78%"}})}
+if(window.gsap&&window.ScrollTrigger&&!rm){
+gsap.registerPlugin(ScrollTrigger);
+const at=(t,s="top 86%")=>({trigger:t,start:s}),
+hs={trigger:".hero",start:"top top",end:"bottom top",scrub:true};
+document.querySelectorAll(".fl").forEach((f,i)=>{const d=f.dataset.from,s=+f.dataset.s||1;
+gsap.from(f,{x:d=="l"?-200:d=="r"?200:0,y:d=="b"?220:70,opacity:0,scale:.86,duration:1.9,delay:1.2+i*.15,ease:"power3.out"});
+gsap.to(f.firstElementChild,{y:-80*s,ease:"none",scrollTrigger:hs})});
+gsap.to(".hero-c",{yPercent:-10,opacity:.15,ease:"none",scrollTrigger:hs});
+gsap.to(".vid-t",{yPercent:-12,opacity:.2,ease:"none",scrollTrigger:{trigger:"#video",start:"center top",end:"bottom top",scrub:true}});
+gsap.from("#sv .sc",{opacity:0,y:60,stagger:.08,duration:1,ease:"power3.out",clearProps:"transform,opacity",scrollTrigger:at("#sv")});
+gsap.from("#bg",{opacity:0,y:60,duration:1.2,ease:"power3.out",clearProps:"transform,opacity",scrollTrigger:at("#bg")});
+gsap.from(".mas .it",{opacity:0,y:50,scale:.95,stagger:.08,duration:1,ease:"power3.out",clearProps:"transform,opacity",scrollTrigger:at("#mas")});
+gsap.utils.toArray("#about [data-img] img,#reviews .ab>[data-img] img").forEach(img=>gsap.fromTo(img,{yPercent:-6,scale:1.12},{yPercent:6,scale:1.12,ease:"none",scrollTrigger:{trigger:img.parentElement,start:"top bottom",end:"bottom top",scrub:true}}))}
 let tx=0;$("#lb").addEventListener("touchstart",e=>{tx=e.touches[0].clientX},{passive:true});
 $("#lb").addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-tx;if(Math.abs(d)>50)lbMove(d<0?1:-1)});
 $("#lb").addEventListener("click",e=>{if(e.target.id=="lb")$("#lb").hidden=true});
 document.addEventListener("click",e=>{const b=e.target.closest("[data-bs],[data-bc]");if(!b)return;bi=+(b.dataset.bs??b.dataset.bc);brandsPlace()});
 document.addEventListener("mouseover",e=>{const b=e.target.closest("[data-bs]");if(b&&matchMedia("(hover:hover)").matches&&+b.dataset.bs!==bi){bi=+b.dataset.bs;brandsPlace()}});
+
+/* ----- Navbar : indicateur (cône de lumière) + lueur au survol ----- */
+const nul=document.querySelector(".nb-ul"),ind=document.querySelector(".nb-ind");
+function moveInd(a){a=a||nul.querySelector("a.on");
+if(!a||innerWidth<=1320){ind.style.opacity=0;return}
+ind.style.width=a.offsetWidth+"px";ind.style.transform=`translateX(${a.offsetLeft}px)`;ind.style.opacity=1}
+new MutationObserver(()=>moveInd()).observe(nul,{subtree:true,attributes:true,attributeFilter:["class"]});
+nul.addEventListener("pointerover",e=>{const a=e.target.closest("a");if(a)moveInd(a)});
+nul.addEventListener("pointerleave",()=>moveInd());
+nul.addEventListener("pointermove",e=>{const a=e.target.closest("a");if(!a)return;const r=a.getBoundingClientRect();a.style.setProperty("--mx",e.clientX-r.left+"px");a.style.setProperty("--my",e.clientY-r.top+"px")});
+addEventListener("resize",()=>moveInd());addEventListener("load",()=>moveInd());
+if(document.fonts&&document.fonts.ready)document.fonts.ready.then(()=>moveInd());
+document.addEventListener("click",e=>{if(e.target.closest("[data-l]"))setTimeout(moveInd,80)});
+moveInd();
+/* ----- Footer : lumière qui suit le curseur + onde au clic ----- */
+$("#ft").addEventListener("pointermove",e=>{const p=e.target.closest(".fp");if(!p)return;const r=p.getBoundingClientRect();p.style.setProperty("--mx",e.clientX-r.left+"px");p.style.setProperty("--my",e.clientY-r.top+"px")});
+$("#ft").addEventListener("pointerdown",e=>{if(rm)return;const p=e.target.closest(".fp");if(!p)return;const r=p.getBoundingClientRect(),s=document.createElement("span");s.className="rip";s.style.setProperty("--x",e.clientX-r.left+"px");s.style.setProperty("--y",e.clientY-r.top+"px");p.appendChild(s);setTimeout(()=>s.remove(),950)});
 </script>
 </body>
 </html>
