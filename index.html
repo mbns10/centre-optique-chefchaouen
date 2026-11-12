@@ -832,7 +832,7 @@ section.vid{background:transparent!important}
 </style>
 </head>
 <body>
-<div id="ld"><div><svg viewBox="0 0 120 50" fill="none" stroke="#FF6B5B" stroke-width="3" aria-hidden="true"><circle cx="34" cy="28" r="18"/><circle cx="86" cy="28" r="18"/><path d="M52 26q8-6 16 0"/></svg><b>CENTRE OPTIQUE CHEFCHAOUEN</b></div></div><i id="cur"></i><div id="vl" aria-hidden="false"><div class="vz"><video id="v" src="assets/videos/centre.mp4" poster="assets/images/gallery/video-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du Centre Optique Chefchaouen"></video></div></div><a class="wf" id="wf" target="_blank" rel="noopener">WhatsApp</a>
+<div id="ld"><div><svg viewBox="0 0 120 50" fill="none" stroke="#FF6B5B" stroke-width="3" aria-hidden="true"><circle cx="34" cy="28" r="18"/><circle cx="86" cy="28" r="18"/><path d="M52 26q8-6 16 0"/></svg><b>CENTRE OPTIQUE CHEFCHAOUEN</b></div></div><i id="cur"></i><div id="vl" aria-hidden="false"><div class="vz"><video id="v" poster="assets/images/gallery/video-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Vidéo du Centre Optique Chefchaouen"></video></div></div><a class="wf" id="wf" target="_blank" rel="noopener">WhatsApp</a>
 <nav class="nb" id="nb" aria-label="Menu principal"><div class="nb-in">
 <a class="nb-brand" href="#home" aria-label="Centre Optique Chefchaouen"><span class="nb-logo"><svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="9.5" cy="19" r="5.5"/><circle cx="22.5" cy="19" r="5.5"/><path d="M15 18.2q1-1.2 2 0M4.2 17.5L6 9.5M27.8 17.5L26 9.5"/></svg></span><span class="nb-name"><b>Centre Optique</b><small>CHEFCHAOUEN</small></span></a>
 <div class="nb-panel" id="nbp"><ul class="nb-ul"><li><a href="#home" data-i="nh"></a></li><li><a href="#services" data-i="n1"></a></li><li><a href="#brands" data-i="nc"></a></li><li><a href="#gallery" data-i="n5"></a></li><li><a href="#about" data-i="n3"></a></li><li><a href="#reviews" data-i="nr"></a></li><li><a href="#contact" data-i="n4"></a></li><li class="nb-indli" aria-hidden="true"><i class="nb-ind"></i></li></ul>
@@ -1093,7 +1093,7 @@ location.href=CFG.whatsapp?`https://wa.me/${CFG.whatsapp}?text=${encodeURICompon
 /* Vidéo : autoplay muet en boucle, pause hors écran, repli sur le poster */
 const v=$("#v"),fr=$("#frame"),rm=matchMedia("(prefers-reduced-motion:reduce)").matches;
 let vis=false;
-v.muted=true;v.defaultMuted=true;v.setAttribute("muted","");
+v.src=innerWidth<820?"assets/videos/centre-mobile.mp4":"assets/videos/centre.mp4";v.muted=true;v.defaultMuted=true;v.setAttribute("muted","");
 const tryPlay=()=>{const p=v.play();if(p&&p.catch)p.catch(()=>{})};
 v.addEventListener("playing",()=>v.classList.add("on"));
 v.addEventListener("error",()=>{v.classList.remove("on");$("#snd").hidden=true;console.warn("Vidéo introuvable ou illisible : assets/videos/centre.mp4")});
