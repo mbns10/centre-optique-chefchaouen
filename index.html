@@ -821,6 +821,14 @@ section.vid{background:transparent!important}
 }
 .vid .frame{height:68vh;min-height:460px;max-height:700px}
 @media(max-width:820px){.vid .frame{height:56svh;min-height:340px;max-height:480px}.vid .vid-t h2{font-size:clamp(1.8rem,8vw,2.4rem)}}
+@media(max-width:820px){
+#vl video{object-position:28% 50%}
+.vid-c{justify-content:flex-end;padding-bottom:92px;text-align:center;align-items:center}
+.vid .vid-t{max-width:30ch}.vid .vid-t h2{margin-inline:auto}.vid .vid-t p{margin-inline:auto;font-size:1.05rem}
+.vid .snd{bottom:48px;inset-inline-end:auto;inset-inline-start:50%;transform:translateX(-50%)}
+[dir=rtl] .vid .snd{transform:translateX(50%)}
+.vid-ov{background:linear-gradient(0deg,rgba(20,33,61,.88) 0,rgba(20,33,61,.45) 45%,transparent 75%),linear-gradient(180deg,rgba(20,33,61,.35) 0,transparent 22%)}
+}
 </style>
 </head>
 <body>
