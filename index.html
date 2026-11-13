@@ -859,6 +859,19 @@ section.vid{background:transparent!important}
 #pth{flex-wrap:wrap}
 .cnv{position:absolute;top:50%;translate:0 -50%;inset-inline-start:10px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,33,61,.2);background:rgba(255,250,243,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--navy);font-size:1.4rem;cursor:pointer}
 .cnv.n{inset-inline-start:auto;inset-inline-end:10px}
+.kb{display:flex;gap:6px;width:fit-content;max-width:100%;overflow-x:auto;padding:6px;margin-bottom:22px;border-radius:999px;background:rgba(255,250,243,.55);border:1px solid rgba(20,33,61,.10);box-shadow:0 8px 24px rgba(20,33,61,.06);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);scrollbar-width:none}
+.kb::-webkit-scrollbar{display:none}
+.kb button{flex:none;padding:11px 22px;border:0;border-radius:999px;background:none;color:var(--navy);font:500 .88rem/1 var(--sans);letter-spacing:.16em;cursor:pointer;transition:background .3s,color .3s,transform .2s}
+.kb button:hover{background:rgba(255,107,91,.18)}
+.kb button:active{transform:scale(.95)}
+.kb button[aria-selected=true]{background:var(--navy);color:var(--cream)}
+#bg .chip{background:rgba(255,250,243,.5);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px)}
+#bg .chip[aria-pressed=true]{background:var(--coral)}
+.ph{position:absolute;inset:0;background:repeating-linear-gradient(45deg,rgba(20,33,61,.04) 0 2px,transparent 2px 9px),var(--bg2)}
+.pc-r{font-size:.85rem;opacity:.7;margin:0}
+.cemp{grid-column:1/-1;padding:60px 0;text-align:center;font:italic 500 1.5rem var(--serif);opacity:.7}
+@media(min-width:1100px){.cg{grid-template-columns:repeat(4,1fr)}}
+@media(max-width:700px){.kb{width:100%}}
 </style>
 </head>
 <body>
@@ -992,10 +1005,10 @@ const FT={fr:{ftn:"Navigation",fts:"Suivez-nous"},en:{ftn:"Navigation",fts:"Foll
 for(const l in X)Object.assign(T[l],X[l],X2[l],X3[l]);
 const NV={fr:{nh:"Accueil",nc:"Collections",nr:"Avis clients",nl:"Menu principal"},en:{nh:"Home",nc:"Collections",nr:"Reviews",nl:"Main menu"},ar:{nh:"الرئيسية",nc:"المجموعات",nr:"آراء الزبناء",nl:"القائمة الرئيسية"},es:{nh:"Inicio",nc:"Colecciones",nr:"Opiniones",nl:"Menú principal"}};
 for(const l in NV)Object.assign(T[l],NV[l]);
-const CT={fr:{bt:"Nos collections exclusives",ksub:"Découvrez notre sélection de montures soigneusement choisies pour révéler votre style.",kall:"Toutes les collections",kf:"Femme",km:"Homme",kmod:"Lunette",kdisc:"Découvrir le modèle",kwa:"Demander des informations sur WhatsApp",kmsg:"Bonjour, je souhaite des informations sur la {m} ({c})."},
-en:{bt:"Our exclusive collections",ksub:"Discover our selection of frames, carefully chosen to reveal your style.",kall:"All collections",kf:"Women",km:"Men",kmod:"Glasses",kdisc:"View the model",kwa:"Ask for information on WhatsApp",kmsg:"Hello, I would like information about {m} ({c})."},
-ar:{bt:"مجموعاتنا الحصرية",ksub:"اكتشف تشكيلتنا من الإطارات المختارة بعناية لإبراز أسلوبك.",kall:"كل المجموعات",kf:"نساء",km:"رجال",kmod:"نظارة",kdisc:"اكتشف الموديل",kwa:"اطلب معلومات عبر واتساب",kmsg:"مرحبًا، أودّ معلومات حول {m} ({c})."},
-es:{bt:"Nuestras colecciones exclusivas",ksub:"Descubra nuestra selección de monturas, elegidas con esmero para realzar su estilo.",kall:"Todas las colecciones",kf:"Mujer",km:"Hombre",kmod:"Gafas",kdisc:"Descubrir el modelo",kwa:"Pedir información por WhatsApp",kmsg:"Hola, me gustaría información sobre {m} ({c})."}};
+const CT={fr:{bt:"Nos collections exclusives",ksub:"Découvrez notre sélection de montures soigneusement choisies pour révéler votre style.",kall:"Toutes les lunettes",kf:"Femme",km:"Homme",kopt:"Lunettes optiques",ksun:"Lunettes solaires",kdisc:"Découvrir le modèle",kwa:"Demander des informations sur WhatsApp",kmsg:"Bonjour, je souhaite des informations sur {b} – {m}{r}.",kref:"Réf.",kempty:"Cette collection arrive bientôt.",kno:"Aucun modèle pour ce filtre."},
+en:{bt:"Our exclusive collections",ksub:"Discover our selection of frames, carefully chosen to reveal your style.",kall:"All eyewear",kf:"Women",km:"Men",kopt:"Optical glasses",ksun:"Sunglasses",kdisc:"View the model",kwa:"Ask for information on WhatsApp",kmsg:"Hello, I would like information about {b} – {m}{r}.",kref:"Ref.",kempty:"This collection is coming soon.",kno:"No model for this filter."},
+ar:{bt:"مجموعاتنا الحصرية",ksub:"اكتشف تشكيلتنا من الإطارات المختارة بعناية لإبراز أسلوبك.",kall:"كل النظارات",kf:"نساء",km:"رجال",kopt:"نظارات طبية",ksun:"نظارات شمسية",kdisc:"اكتشف الموديل",kwa:"اطلب معلومات عبر واتساب",kmsg:"مرحبًا، أودّ معلومات حول {b} – {m}{r}.",kref:"المرجع",kempty:"هذه المجموعة قريبًا.",kno:"لا يوجد موديل لهذا الفلتر."},
+es:{bt:"Nuestras colecciones exclusivas",ksub:"Descubra nuestra selección de monturas, elegidas con esmero para realzar su estilo.",kall:"Todas las gafas",kf:"Mujer",km:"Hombre",kopt:"Gafas graduadas",ksun:"Gafas de sol",kdisc:"Descubrir el modelo",kwa:"Pedir información por WhatsApp",kmsg:"Hola, me gustaría información sobre {b} – {m}{r}.",kref:"Ref.",kempty:"Esta colección llegará pronto.",kno:"Ningún modelo para este filtro."}};
 for(const l in CT)Object.assign(T[l],CT[l]);
 /* ===== IMAGES : un seul endroit. Ajoutez "clé":["assets/images/dossier/fichier.webp","texte ALT"] pour remplacer un emplacement ===== */
 /* Photos réelles du magasin : déposez vos 2 fichiers dans assets/images/gallery/ (ou changez les 2 chemins ci-dessous) */
@@ -1042,23 +1055,37 @@ const pk=p=>"products."+slug(p.brand)+"-"+p.name.toLowerCase();
 function openP(p){cp=p;pv=1;const t=T[L];$("#pmt").innerHTML=`<h3>${p.brand}</h3><p>${t.rf} ${p.name}</p><p>${t[p.cat]} · ${t[p.style]}</p>${p.colors.length?`<p>${p.colors.join(", ")}</p>`:""}${p.desc?`<p>${p.desc}</p>`:""}${p.demo?`<p><em>${t.demo}</em></p>`:""}<div class="b"><a class="btn p" target="_blank" rel="noopener" href="${wa(t.wad+p.brand+" "+p.name)}">${t.av}</a><button class="btn" id="psh">${t.sh}</button></div>`;pmain();$("#pm").hidden=false}
 function pmain(){const k=pk(cp);$("#pmain").dataset.img=k+"-"+pv;$("#pmain").innerHTML="";$("#pth").innerHTML=[1,2,3].map(n=>`<button aria-pressed="${n==pv}" data-pt="${n}"><div data-img="${k}-${n}" style="position:absolute;inset:0;border-radius:0"></div></button>`).join("");fill()}
 async function share(){const d={title:cp.brand+" "+cp.name,text:cp.brand+" "+cp.name,url:location.href.split("#")[0]};try{if(navigator.share)await navigator.share(d);else{await navigator.clipboard.writeText(d.url);$("#psh").textContent=T[L].cp}}catch(e){}}
-/* ===== COLLECTIONS : modèles regroupés par photos (positions) ===== */
-const COLL={femme:[5,4,3,3,3,3,3,3,3,3,3,3,3,3,4,3,3,3],homme:[5,3,3,3,3,3,3,3,4,5]}; // nb de photos par modèle
-const cimg=(g,n,p)=>`assets/images/products/collection/${g}-${String(n).padStart(2,"0")}-${p}.webp`;
-const CL=[].concat(...Object.keys(COLL).map(g=>COLL[g].map((c,i)=>({g,n:i+1,c}))));
-let kf="all",cm=null,ci=0;
-const kn=m=>T[L].kmod+" "+String(m.n).padStart(2,"0"),kc=m=>m.g=="femme"?T[L].kf:T[L].km;
+/* ===== COLLECTIONS : catalogue centralisé =====
+   Ajouter un modèle : copiez une ligne de CATALOG.
+   Une marque sans modèle affiche « bientôt disponible ». */
+const BR=["LIVIT","ZENIT","CEIDION","FRANKLIN","DIOR","VETTO"];
+const IMG="assets/images/products/collection/",pad=n=>String(n).padStart(2,"0");
+/* mk : génère les modèles d'une marque à partir du nombre de photos par modèle (fichiers genre-NN-P.webp) */
+const mk=(brand,gender,counts,category)=>counts.map((c,i)=>({brand,model:"Lunette "+pad(i+1),reference:"",gender,category,description:"",images:Array.from({length:c},(_,k)=>`${IMG}${gender}-${pad(i+1)}-${k+1}.webp`)}));
+const CATALOG=[
+ /* LIVIT : photos réelles (category "opt" d'après vos photos ; mettre "sun" ou "" si besoin) */
+ ...mk("LIVIT","femme",[5,4,3,3,3,3,3,3,3,3,3,3,3,3,4,3,3,3],"opt"),
+ ...mk("LIVIT","homme",[5,3,3,3,3,3,3,3,4,5],"opt"),
+ /* Autres marques : exemple à copier
+ {brand:"ZENIT",model:"Z-01",reference:"",gender:"femme",category:"sun",description:"",images:["assets/images/products/zenit/zenit-01-1.webp","assets/images/products/zenit/zenit-01-2.webp"]},
+ */
+];
+let kb=0,kf="all",cm=null,ci=0,vis=[];
+const kg=m=>m.gender=="femme"?T[L].kf:T[L].km;
+const ph='<div class="ph"></div>',oe="onerror=\"this.outerHTML='<div class=ph></div>'\"";
 function brandsUI(){const t=T[L];
-$("#bg").innerHTML=`<p class="csub">${t.ksub}</p><div class="chips" role="group">${["all","femme","homme"].map(v=>`<button class="chip" data-kf="${v}" aria-pressed="${kf==v}">${v=="all"?t.kall:v=="femme"?t.kf:t.km}</button>`).join("")}</div><div class="cg" id="cg"></div>`;cgrid()}
-function cgrid(){const t=T[L];
-$("#cg").innerHTML=CL.filter(m=>kf=="all"||m.g==kf).map((m,i)=>`<article class="pc" style="--i:${i%12}"><button class="pc-i" data-m="${m.g}-${m.n}" aria-label="${kn(m)} – ${kc(m)}"><img src="${cimg(m.g,m.n,1)}" alt="${kn(m)}, ${kc(m).toLowerCase()} – Centre Optique Chefchaouen" width="1200" height="900" loading="lazy" decoding="async" onerror="this.closest('.pc').remove()"></button><div class="pc-b"><span>${kc(m)}</span><h3>${kn(m)}</h3><button class="btn pc-d" data-m="${m.g}-${m.n}">${t.kdisc}</button></div></article>`).join("")}
-function openC(k){const a=k.split("-");cm=CL.find(x=>x.g==a[0]&&x.n==+a[1]);ci=0;const t=T[L];
-$("#pmt").innerHTML=`<h3>${kn(cm)}</h3><p>${kc(cm)}</p><div class="b"><a class="btn p" target="_blank" rel="noopener" href="${wa(t.kmsg.replace("{m}",kn(cm)).replace("{c}",kc(cm)))}">${t.kwa}</a></div>`;
-$("#pth").innerHTML=Array.from({length:cm.c},(_,i)=>`<button type="button" data-ct="${i}" aria-pressed="false" aria-label="${kn(cm)} ${i+1}"><img src="${cimg(cm.g,cm.n,i+1)}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.parentNode.remove()"></button>`).join("");
+$("#bg").innerHTML=`<p class="csub">${t.ksub}</p><div class="kb" role="tablist">${BR.map((b,i)=>`<button type="button" role="tab" data-kb="${i}" aria-selected="${i==kb}">${b}</button>`).join("")}</div><div class="chips" role="group">${[["all","kall"],["femme","kf"],["homme","km"],["opt","kopt"],["sun","ksun"]].map(f=>`<button class="chip" data-kf="${f[0]}" aria-pressed="${kf==f[0]}">${t[f[1]]}</button>`).join("")}</div><div class="cg" id="cg"></div>`;cgrid()}
+function cgrid(){const t=T[L],own=CATALOG.filter(m=>m.brand==BR[kb]);
+vis=own.filter(m=>kf=="all"||m.gender==kf||m.category==kf);
+$("#cg").innerHTML=vis.length?vis.map((m,i)=>`<article class="pc" style="--i:${i%12}"><button class="pc-i" data-m="${i}" aria-label="${m.brand} ${m.model}">${m.images[0]?`<img src="${m.images[0]}" alt="${m.brand} ${m.model}, ${kg(m).toLowerCase()} – Centre Optique Chefchaouen" width="1200" height="900" loading="lazy" decoding="async" ${oe}>`:ph}</button><div class="pc-b"><span>${m.brand} · ${kg(m)}</span><h3>${m.model}</h3>${m.reference?`<p class="pc-r">${t.kref} ${m.reference}</p>`:""}<button class="btn pc-d" data-m="${i}">${t.kdisc}</button></div></article>`).join(""):`<p class="cemp">${own.length?t.kno:t.kempty}</p>`}
+function openC(i){cm=vis[i];if(!cm)return;ci=0;const t=T[L],r=cm.reference?" ("+t.kref+" "+cm.reference+")":"";
+$("#pmt").innerHTML=`<p class="pc-r">${cm.brand}</p><h3>${cm.model}</h3><p>${kg(cm)}${cm.category?" · "+(cm.category=="sun"?t.ksun:t.kopt):""}</p>${cm.reference?`<p>${t.kref} ${cm.reference}</p>`:""}${cm.description?`<p>${cm.description}</p>`:""}<div class="b"><a class="btn p" target="_blank" rel="noopener" href="${wa(t.kmsg.replace("{b}",cm.brand).replace("{m}",cm.model).replace("{r}",r))}">${t.kwa}</a></div>`;
+$("#pth").innerHTML=cm.images.length>1?cm.images.map((s,k)=>`<button type="button" data-ct="${k}" aria-pressed="false" aria-label="${cm.model} ${k+1}"><img src="${s}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" ${oe}></button>`).join(""):"";
 cshow();$("#pm").hidden=false}
-function cshow(){$("#pmain").innerHTML=`<img src="${cimg(cm.g,cm.n,ci+1)}" alt="${kn(cm)}, ${kc(cm).toLowerCase()} – ${ci+1}/${cm.c}" width="1200" height="900" decoding="async"><button type="button" class="cnv" data-cn="-1" aria-label="‹">‹</button><button type="button" class="cnv n" data-cn="1" aria-label="›">›</button>`;
+function cshow(){const s=cm.images[ci];
+$("#pmain").innerHTML=(s?`<img src="${s}" alt="${cm.brand} ${cm.model}, ${kg(cm).toLowerCase()} – ${ci+1}/${cm.images.length}" width="1200" height="900" decoding="async" ${oe}>`:ph)+(cm.images.length>1?`<button type="button" class="cnv" data-cn="-1" aria-label="‹">‹</button><button type="button" class="cnv n" data-cn="1" aria-label="›">›</button>`:"");
 document.querySelectorAll("#pth [data-ct]").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.ct==ci))}
-const cmove=d=>{ci=(ci+d+cm.c)%cm.c;cshow()};
+const cmove=d=>{ci=(ci+d+cm.images.length)%cm.images.length;cshow()};
 function foot(){const t=T[L],m=encodeURIComponent(CFG.mapsQuery),
 I=p=>`<svg viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`,
 P={pin:'<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
@@ -1168,12 +1195,13 @@ matchMedia("(min-width:1321px)").onchange=e=>{if(e.matches)mset(false)};upd();
 render();
 setTimeout(()=>$("#ld").classList.add("off"),rm?0:1500);
 $("#pmain").onmousemove=e=>{const r=e.currentTarget.getBoundingClientRect(),i=e.currentTarget.querySelector("img");if(i)i.style.transformOrigin=(e.clientX-r.left)/r.width*100+"% "+(e.clientY-r.top)/r.height*100+"%"};
-document.addEventListener("click",e=>{const b=e.target.closest("[data-kf],[data-m],[data-ct],[data-cn]");if(!b)return;
-if(b.dataset.kf){kf=b.dataset.kf;document.querySelectorAll("#bg [data-kf]").forEach(x=>x.setAttribute("aria-pressed",x==b));cgrid()}
-else if(b.dataset.m)openC(b.dataset.m);else if(b.dataset.ct){ci=+b.dataset.ct;cshow()}else cmove(+b.dataset.cn)});
+document.addEventListener("click",e=>{const b=e.target.closest("[data-kb],[data-kf],[data-m],[data-ct],[data-cn]");if(!b)return;
+if(b.dataset.kb!=null){kb=+b.dataset.kb;brandsUI();const a=$('#bg [data-kb="'+kb+'"]');if(a)a.scrollIntoView({inline:"center",block:"nearest"})}
+else if(b.dataset.kf){kf=b.dataset.kf;document.querySelectorAll("#bg [data-kf]").forEach(x=>x.setAttribute("aria-pressed",x==b));cgrid()}
+else if(b.dataset.m!=null)openC(+b.dataset.m);else if(b.dataset.ct){ci=+b.dataset.ct;cshow()}else cmove(+b.dataset.cn)});
 addEventListener("keydown",e=>{if($("#pm").hidden||!cm)return;if(e.key=="ArrowRight")cmove(1);if(e.key=="ArrowLeft")cmove(-1)});
 let sx=0;$("#pmain").addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
-$("#pmain").addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-sx;if(cm&&Math.abs(d)>40)cmove(d<0?1:-1)});
+$("#pmain").addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-sx;if(cm&&cm.images.length>1&&Math.abs(d)>40)cmove(d<0?1:-1)});
 $("#pm").addEventListener("click",e=>{if(e.target.id=="pm")$("#pm").hidden=true});
 new IntersectionObserver((es,o)=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("go");o.unobserve(x.target)}}),{threshold:.05}).observe($("#bg"));
 /* ----- Section rendez-vous : interactions + message WhatsApp ----- */
