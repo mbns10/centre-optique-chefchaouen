@@ -1059,31 +1059,29 @@ async function share(){const d={title:cp.brand+" "+cp.name,text:cp.brand+" "+cp.
    Ajouter un modèle : copiez une ligne de CATALOG.
    Une marque sans modèle affiche « bientôt disponible ». */
 const BR=["LIVIT","ZENIT","CEIDION","FRANKLIN","DIOR","VETTO"];
-const IMG="assets/images/products/collection/",pad=n=>String(n).padStart(2,"0");
-/* mk : génère les modèles d'une marque à partir du nombre de photos par modèle (fichiers genre-NN-P.webp) */
-const mk=(brand,gender,counts,category)=>counts.map((c,i)=>({brand,model:"Lunette "+pad(i+1),reference:"",gender,category,description:"",images:Array.from({length:c},(_,k)=>`${IMG}${gender}-${pad(i+1)}-${k+1}.webp`)}));
+const KIMG="assets/images/products/collection/",kpad=n=>String(n).padStart(2,"0");
+const kmk=(brand,gender,counts,category)=>counts.map((c,i)=>({brand,model:"Lunette "+kpad(i+1),reference:"",gender,category,description:"",images:Array.from({length:c},(_,k)=>`${KIMG}${gender}-${kpad(i+1)}-${k+1}.webp`)}));
 const CATALOG=[
- /* LIVIT : photos réelles (category "opt" d'après vos photos ; mettre "sun" ou "" si besoin) */
- ...mk("LIVIT","femme",[5,4,3,3,3,3,3,3,3,3,3,3,3,3,4,3,3,3],"opt"),
- ...mk("LIVIT","homme",[5,3,3,3,3,3,3,3,4,5],"opt"),
+ ...kmk("LIVIT","femme",[5,4,3,3,3,3,3,3,3,3,3,3,3,3,4,3,3,3],"opt"),
+ ...kmk("LIVIT","homme",[5,3,3,3,3,3,3,3,4,5],"opt"),
  /* Autres marques : exemple à copier
- {brand:"ZENIT",model:"Z-01",reference:"",gender:"femme",category:"sun",description:"",images:["assets/images/products/zenit/zenit-01-1.webp","assets/images/products/zenit/zenit-01-2.webp"]},
+ {brand:"ZENIT",model:"Z-01",reference:"",gender:"femme",category:"sun",description:"",images:["assets/images/products/zenit/zenit-01-1.webp"]},
  */
 ];
-let kb=0,kf="all",cm=null,ci=0,vis=[];
-const kg=m=>m.gender=="femme"?T[L].kf:T[L].km;
-const ph='<div class="ph"></div>',oe="onerror=\"this.outerHTML='<div class=ph></div>'\"";
+let kb=0,kf="all",cm=null,ci=0,kvis=[];
+const kgen=m=>m.gender=="femme"?T[L].kf:T[L].km;
+const kph='<div class="ph"></div>',koe="onerror=\"this.outerHTML='<div class=ph></div>'\"";
 function brandsUI(){const t=T[L];
 $("#bg").innerHTML=`<p class="csub">${t.ksub}</p><div class="kb" role="tablist">${BR.map((b,i)=>`<button type="button" role="tab" data-kb="${i}" aria-selected="${i==kb}">${b}</button>`).join("")}</div><div class="chips" role="group">${[["all","kall"],["femme","kf"],["homme","km"],["opt","kopt"],["sun","ksun"]].map(f=>`<button class="chip" data-kf="${f[0]}" aria-pressed="${kf==f[0]}">${t[f[1]]}</button>`).join("")}</div><div class="cg" id="cg"></div>`;cgrid()}
 function cgrid(){const t=T[L],own=CATALOG.filter(m=>m.brand==BR[kb]);
-vis=own.filter(m=>kf=="all"||m.gender==kf||m.category==kf);
-$("#cg").innerHTML=vis.length?vis.map((m,i)=>`<article class="pc" style="--i:${i%12}"><button class="pc-i" data-m="${i}" aria-label="${m.brand} ${m.model}">${m.images[0]?`<img src="${m.images[0]}" alt="${m.brand} ${m.model}, ${kg(m).toLowerCase()} – Centre Optique Chefchaouen" width="1200" height="900" loading="lazy" decoding="async" ${oe}>`:ph}</button><div class="pc-b"><span>${m.brand} · ${kg(m)}</span><h3>${m.model}</h3>${m.reference?`<p class="pc-r">${t.kref} ${m.reference}</p>`:""}<button class="btn pc-d" data-m="${i}">${t.kdisc}</button></div></article>`).join(""):`<p class="cemp">${own.length?t.kno:t.kempty}</p>`}
-function openC(i){cm=vis[i];if(!cm)return;ci=0;const t=T[L],r=cm.reference?" ("+t.kref+" "+cm.reference+")":"";
-$("#pmt").innerHTML=`<p class="pc-r">${cm.brand}</p><h3>${cm.model}</h3><p>${kg(cm)}${cm.category?" · "+(cm.category=="sun"?t.ksun:t.kopt):""}</p>${cm.reference?`<p>${t.kref} ${cm.reference}</p>`:""}${cm.description?`<p>${cm.description}</p>`:""}<div class="b"><a class="btn p" target="_blank" rel="noopener" href="${wa(t.kmsg.replace("{b}",cm.brand).replace("{m}",cm.model).replace("{r}",r))}">${t.kwa}</a></div>`;
-$("#pth").innerHTML=cm.images.length>1?cm.images.map((s,k)=>`<button type="button" data-ct="${k}" aria-pressed="false" aria-label="${cm.model} ${k+1}"><img src="${s}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" ${oe}></button>`).join(""):"";
+kvis=own.filter(m=>kf=="all"||m.gender==kf||m.category==kf);
+$("#cg").innerHTML=kvis.length?kvis.map((m,i)=>`<article class="pc" style="--i:${i%12}"><button class="pc-i" data-m="${i}" aria-label="${m.brand} ${m.model}">${m.images[0]?`<img src="${m.images[0]}" alt="${m.brand} ${m.model}, ${kgen(m).toLowerCase()} – Centre Optique Chefchaouen" width="1200" height="900" loading="lazy" decoding="async" ${koe}>`:kph}</button><div class="pc-b"><span>${m.brand} · ${kgen(m)}</span><h3>${m.model}</h3>${m.reference?`<p class="pc-r">${t.kref} ${m.reference}</p>`:""}<button class="btn pc-d" data-m="${i}">${t.kdisc}</button></div></article>`).join(""):`<p class="cemp">${own.length?t.kno:t.kempty}</p>`}
+function openC(i){cm=kvis[i];if(!cm)return;ci=0;const t=T[L],r=cm.reference?" ("+t.kref+" "+cm.reference+")":"";
+$("#pmt").innerHTML=`<p class="pc-r">${cm.brand}</p><h3>${cm.model}</h3><p>${kgen(cm)}${cm.category?" · "+(cm.category=="sun"?t.ksun:t.kopt):""}</p>${cm.reference?`<p>${t.kref} ${cm.reference}</p>`:""}${cm.description?`<p>${cm.description}</p>`:""}<div class="b"><a class="btn p" target="_blank" rel="noopener" href="${wa(t.kmsg.replace("{b}",cm.brand).replace("{m}",cm.model).replace("{r}",r))}">${t.kwa}</a></div>`;
+$("#pth").innerHTML=cm.images.length>1?cm.images.map((s,k)=>`<button type="button" data-ct="${k}" aria-pressed="false" aria-label="${cm.model} ${k+1}"><img src="${s}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" ${koe}></button>`).join(""):"";
 cshow();$("#pm").hidden=false}
 function cshow(){const s=cm.images[ci];
-$("#pmain").innerHTML=(s?`<img src="${s}" alt="${cm.brand} ${cm.model}, ${kg(cm).toLowerCase()} – ${ci+1}/${cm.images.length}" width="1200" height="900" decoding="async" ${oe}>`:ph)+(cm.images.length>1?`<button type="button" class="cnv" data-cn="-1" aria-label="‹">‹</button><button type="button" class="cnv n" data-cn="1" aria-label="›">›</button>`:"");
+$("#pmain").innerHTML=(s?`<img src="${s}" alt="${cm.brand} ${cm.model}, ${kgen(cm).toLowerCase()} – ${ci+1}/${cm.images.length}" width="1200" height="900" decoding="async" ${koe}>`:kph)+(cm.images.length>1?`<button type="button" class="cnv" data-cn="-1" aria-label="‹">‹</button><button type="button" class="cnv n" data-cn="1" aria-label="›">›</button>`:"");
 document.querySelectorAll("#pth [data-ct]").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.ct==ci))}
 const cmove=d=>{ci=(ci+d+cm.images.length)%cm.images.length;cshow()};
 function foot(){const t=T[L],m=encodeURIComponent(CFG.mapsQuery),
