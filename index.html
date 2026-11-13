@@ -829,6 +829,36 @@ section.vid{background:transparent!important}
 [dir=rtl] .vid .snd{transform:translateX(50%)}
 .vid-ov{background:linear-gradient(0deg,rgba(20,33,61,.88) 0,rgba(20,33,61,.45) 45%,transparent 75%),linear-gradient(180deg,rgba(20,33,61,.35) 0,transparent 22%)}
 }
+/* ===== COLLECTIONS PREMIUM ===== */
+#brands{background:radial-gradient(60% 50% at 85% 0,rgba(255,107,91,.10),transparent 70%),var(--cream)!important}
+#bg.col{display:block}
+.csub{max-width:56ch;margin:-8px 0 26px;font-size:1.08rem;opacity:.8}
+#bg .chips{margin-bottom:34px}
+.cg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:22px}
+.pc{display:flex;flex-direction:column;border-radius:20px;overflow:hidden;background:linear-gradient(145deg,rgba(255,250,243,.92),rgba(244,237,224,.6));border:1px solid rgba(20,33,61,.10);box-shadow:0 10px 30px rgba(20,33,61,.08);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);transition:transform .5s cubic-bezier(.2,.7,.2,1),box-shadow .5s,border-color .5s}
+.pc:hover{transform:translateY(-6px);border-color:rgba(255,107,91,.7);box-shadow:0 22px 46px rgba(20,33,61,.16),0 0 0 1px rgba(255,107,91,.35),0 0 24px rgba(255,107,91,.18)}
+#bg.go .pc{animation:pcIn .8s calc(var(--i)*.06s) cubic-bezier(.2,.7,.2,1) backwards}
+@keyframes pcIn{from{opacity:0;transform:translateY(34px)}}
+.pc-i{display:block;position:relative;width:100%;aspect-ratio:4/3;padding:0;border:0;background:var(--bg2);cursor:pointer;overflow:hidden}
+.pc-i img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+.pc:hover .pc-i img{transform:scale(1.05)}
+.pc-b{display:grid;gap:4px;padding:18px 20px 20px}
+.pc-b span{font:500 .72rem/1 var(--sans);letter-spacing:.22em;text-transform:uppercase;opacity:.7}
+.pc-b span:before{content:"";display:inline-block;width:18px;height:2px;margin-inline-end:8px;vertical-align:middle;background:var(--coral)}
+.pc-b h3{font-size:1.6rem}
+.pc-d{justify-self:start;margin-top:10px;padding:10px 20px;font-size:.92rem;transition:opacity .4s,transform .4s,background .25s,color .25s}
+@media(hover:hover){.pc-d{opacity:0;transform:translateY(8px)}.pc:hover .pc-d,.pc-d:focus-visible{opacity:1;transform:none}}
+@media(max-width:700px){.cg{grid-template-columns:1fr 1fr;gap:12px}.pc-b{padding:12px}.pc-b h3{font-size:1.25rem}.pc-d{padding:9px 14px;font-size:.85rem}}
+@media(max-width:379px){.cg{grid-template-columns:1fr}}
+/* fenêtre immersive (réutilise #pm existant) */
+#pm{background:rgba(14,24,48,.55);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px)}
+#pm:not([hidden]) .pmi{animation:pcIn .5s cubic-bezier(.2,.7,.2,1)}
+.pmi{background:linear-gradient(145deg,rgba(255,250,243,.94),rgba(244,237,224,.86));border:1px solid rgba(255,250,243,.6);box-shadow:0 30px 80px rgba(5,10,24,.45)}
+#pmain{border-radius:14px}#pmain:hover img{transform:scale(1.6)}
+#pmt{align-self:center}#pmt h3{font-size:2rem;margin-bottom:6px}
+#pth{flex-wrap:wrap}
+.cnv{position:absolute;top:50%;translate:0 -50%;inset-inline-start:10px;z-index:2;width:44px;height:44px;border-radius:50%;border:1px solid rgba(20,33,61,.2);background:rgba(255,250,243,.8);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:var(--navy);font-size:1.4rem;cursor:pointer}
+.cnv.n{inset-inline-start:auto;inset-inline-end:10px}
 </style>
 </head>
 <body>
@@ -874,7 +904,7 @@ section.vid{background:transparent!important}
 <section id="fs" style="background:var(--navy);color:var(--cream)"><div class="w"><h2 data-i="fst" style="max-width:20ch"></h2><div class="fs" id="fx"></div></div></section>
 <div id="pm" hidden role="dialog" aria-modal="true"><div class="pmi"><button id="px" aria-label="Close">×</button><div><div id="pmain" data-img="x"></div><div id="pth"></div></div><div id="pmt"></div></div></div>
 <section id="brands"><div class="w"><h2 data-i="bt"></h2>
-<div id="bg" class="bs"></div>
+<div id="bg" class="col"></div>
 <div id="gal" hidden><button class="btn" id="back"></button><h2 id="gt"></h2><div class="chips" id="cf"></div><div class="chips" id="sf"></div><div class="grid" id="pg"></div></div></div></section>
 
 <section class="about" id="about"><div class="w ab"><div><h2 data-i="at"></h2><p data-i="ap"></p></div><div class="pair"><div data-img="about.interior"></div><div data-img="about.exterior"></div></div></div></section>
@@ -962,6 +992,11 @@ const FT={fr:{ftn:"Navigation",fts:"Suivez-nous"},en:{ftn:"Navigation",fts:"Foll
 for(const l in X)Object.assign(T[l],X[l],X2[l],X3[l]);
 const NV={fr:{nh:"Accueil",nc:"Collections",nr:"Avis clients",nl:"Menu principal"},en:{nh:"Home",nc:"Collections",nr:"Reviews",nl:"Main menu"},ar:{nh:"الرئيسية",nc:"المجموعات",nr:"آراء الزبناء",nl:"القائمة الرئيسية"},es:{nh:"Inicio",nc:"Colecciones",nr:"Opiniones",nl:"Menú principal"}};
 for(const l in NV)Object.assign(T[l],NV[l]);
+const CT={fr:{bt:"Nos collections exclusives",ksub:"Découvrez notre sélection de montures soigneusement choisies pour révéler votre style.",kall:"Toutes les collections",kf:"Femme",km:"Homme",kmod:"Lunette",kdisc:"Découvrir le modèle",kwa:"Demander des informations sur WhatsApp",kmsg:"Bonjour, je souhaite des informations sur la {m} ({c})."},
+en:{bt:"Our exclusive collections",ksub:"Discover our selection of frames, carefully chosen to reveal your style.",kall:"All collections",kf:"Women",km:"Men",kmod:"Glasses",kdisc:"View the model",kwa:"Ask for information on WhatsApp",kmsg:"Hello, I would like information about {m} ({c})."},
+ar:{bt:"مجموعاتنا الحصرية",ksub:"اكتشف تشكيلتنا من الإطارات المختارة بعناية لإبراز أسلوبك.",kall:"كل المجموعات",kf:"نساء",km:"رجال",kmod:"نظارة",kdisc:"اكتشف الموديل",kwa:"اطلب معلومات عبر واتساب",kmsg:"مرحبًا، أودّ معلومات حول {m} ({c})."},
+es:{bt:"Nuestras colecciones exclusivas",ksub:"Descubra nuestra selección de monturas, elegidas con esmero para realzar su estilo.",kall:"Todas las colecciones",kf:"Mujer",km:"Hombre",kmod:"Gafas",kdisc:"Descubrir el modelo",kwa:"Pedir información por WhatsApp",kmsg:"Hola, me gustaría información sobre {m} ({c})."}};
+for(const l in CT)Object.assign(T[l],CT[l]);
 /* ===== IMAGES : un seul endroit. Ajoutez "clé":["assets/images/dossier/fichier.webp","texte ALT"] pour remplacer un emplacement ===== */
 /* Photos réelles du magasin : déposez vos 2 fichiers dans assets/images/gallery/ (ou changez les 2 chemins ci-dessous) */
 const PH1="assets/images/gallery/accueil-bureau.jpg",PH2="assets/images/gallery/presentoirs-homme-femme.jpg",
@@ -1007,13 +1042,23 @@ const pk=p=>"products."+slug(p.brand)+"-"+p.name.toLowerCase();
 function openP(p){cp=p;pv=1;const t=T[L];$("#pmt").innerHTML=`<h3>${p.brand}</h3><p>${t.rf} ${p.name}</p><p>${t[p.cat]} · ${t[p.style]}</p>${p.colors.length?`<p>${p.colors.join(", ")}</p>`:""}${p.desc?`<p>${p.desc}</p>`:""}${p.demo?`<p><em>${t.demo}</em></p>`:""}<div class="b"><a class="btn p" target="_blank" rel="noopener" href="${wa(t.wad+p.brand+" "+p.name)}">${t.av}</a><button class="btn" id="psh">${t.sh}</button></div>`;pmain();$("#pm").hidden=false}
 function pmain(){const k=pk(cp);$("#pmain").dataset.img=k+"-"+pv;$("#pmain").innerHTML="";$("#pth").innerHTML=[1,2,3].map(n=>`<button aria-pressed="${n==pv}" data-pt="${n}"><div data-img="${k}-${n}" style="position:absolute;inset:0;border-radius:0"></div></button>`).join("");fill()}
 async function share(){const d={title:cp.brand+" "+cp.name,text:cp.brand+" "+cp.name,url:location.href.split("#")[0]};try{if(navigator.share)await navigator.share(d);else{await navigator.clipboard.writeText(d.url);$("#psh").textContent=T[L].cp}}catch(e){}}
+/* ===== COLLECTIONS : modèles regroupés par photos (positions) ===== */
+const COLL={femme:[5,4,3,3,3,3,3,3,3,3,3,2],homme:[5,3,3,3,3,3,3,3,4,5]}; // nb de photos par modèle
+const cimg=(g,n,p)=>`assets/images/products/collection/${g}-${String(n).padStart(2,"0")}-${p}.webp`;
+const CL=[].concat(...Object.keys(COLL).map(g=>COLL[g].map((c,i)=>({g,n:i+1,c}))));
+let kf="all",cm=null,ci=0;
+const kn=m=>T[L].kmod+" "+String(m.n).padStart(2,"0"),kc=m=>m.g=="femme"?T[L].kf:T[L].km;
 function brandsUI(){const t=T[L];
-$("#bg").innerHTML=`<div><ul class="bl">${BRANDS.map((b,i)=>`<li><button type="button" class="bn" data-bs="${i}" aria-pressed="${i==bi}"><i>0${i+1}</i><span>${b}</span></button></li>`).join("")}</ul><a id="bcta" class="btn p bcta" target="_blank" rel="noopener">${t.av}</a></div><div class="bst">${BRANDS.map((b,i)=>`<figure class="bc" data-bc="${i}"><div data-img="brands.${slug(b)}"></div><figcaption>${b}</figcaption></figure>`).join("")}</div>`;
-fill();brandsPlace()}
-function brandsPlace(){const n=BRANDS.length;
-document.querySelectorAll("#bg .bc").forEach((c,i)=>{c.dataset.d=Math.min((i-bi+n)%n,3)});
-document.querySelectorAll("#bg .bn").forEach((b,i)=>b.setAttribute("aria-pressed",i==bi));
-const c=$("#bcta");if(c)c.href=wa(T[L].wad+BRANDS[bi])}
+$("#bg").innerHTML=`<p class="csub">${t.ksub}</p><div class="chips" role="group">${["all","femme","homme"].map(v=>`<button class="chip" data-kf="${v}" aria-pressed="${kf==v}">${v=="all"?t.kall:v=="femme"?t.kf:t.km}</button>`).join("")}</div><div class="cg" id="cg"></div>`;cgrid()}
+function cgrid(){const t=T[L];
+$("#cg").innerHTML=CL.filter(m=>kf=="all"||m.g==kf).map((m,i)=>`<article class="pc" style="--i:${i%12}"><button class="pc-i" data-m="${m.g}-${m.n}" aria-label="${kn(m)} – ${kc(m)}"><img src="${cimg(m.g,m.n,1)}" alt="${kn(m)}, ${kc(m).toLowerCase()} – Centre Optique Chefchaouen" width="1200" height="900" loading="lazy" decoding="async" onerror="this.closest('.pc').remove()"></button><div class="pc-b"><span>${kc(m)}</span><h3>${kn(m)}</h3><button class="btn pc-d" data-m="${m.g}-${m.n}">${t.kdisc}</button></div></article>`).join("")}
+function openC(k){const a=k.split("-");cm=CL.find(x=>x.g==a[0]&&x.n==+a[1]);ci=0;const t=T[L];
+$("#pmt").innerHTML=`<h3>${kn(cm)}</h3><p>${kc(cm)}</p><div class="b"><a class="btn p" target="_blank" rel="noopener" href="${wa(t.kmsg.replace("{m}",kn(cm)).replace("{c}",kc(cm)))}">${t.kwa}</a></div>`;
+$("#pth").innerHTML=Array.from({length:cm.c},(_,i)=>`<button type="button" data-ct="${i}" aria-pressed="false" aria-label="${kn(cm)} ${i+1}"><img src="${cimg(cm.g,cm.n,i+1)}" alt="" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover" onerror="this.parentNode.remove()"></button>`).join("");
+cshow();$("#pm").hidden=false}
+function cshow(){$("#pmain").innerHTML=`<img src="${cimg(cm.g,cm.n,ci+1)}" alt="${kn(cm)}, ${kc(cm).toLowerCase()} – ${ci+1}/${cm.c}" width="1200" height="900" decoding="async"><button type="button" class="cnv" data-cn="-1" aria-label="‹">‹</button><button type="button" class="cnv n" data-cn="1" aria-label="›">›</button>`;
+document.querySelectorAll("#pth [data-ct]").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.ct==ci))}
+const cmove=d=>{ci=(ci+d+cm.c)%cm.c;cshow()};
 function foot(){const t=T[L],m=encodeURIComponent(CFG.mapsQuery),
 I=p=>`<svg viewBox="0 0 24 24" aria-hidden="true">${p}</svg>`,
 P={pin:'<path d="M12 21s7-6.2 7-11.5A7 7 0 0 0 5 9.5C5 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/>',
@@ -1123,7 +1168,14 @@ matchMedia("(min-width:1321px)").onchange=e=>{if(e.matches)mset(false)};upd();
 render();
 setTimeout(()=>$("#ld").classList.add("off"),rm?0:1500);
 $("#pmain").onmousemove=e=>{const r=e.currentTarget.getBoundingClientRect(),i=e.currentTarget.querySelector("img");if(i)i.style.transformOrigin=(e.clientX-r.left)/r.width*100+"% "+(e.clientY-r.top)/r.height*100+"%"};
-
+document.addEventListener("click",e=>{const b=e.target.closest("[data-kf],[data-m],[data-ct],[data-cn]");if(!b)return;
+if(b.dataset.kf){kf=b.dataset.kf;document.querySelectorAll("#bg [data-kf]").forEach(x=>x.setAttribute("aria-pressed",x==b));cgrid()}
+else if(b.dataset.m)openC(b.dataset.m);else if(b.dataset.ct){ci=+b.dataset.ct;cshow()}else cmove(+b.dataset.cn)});
+addEventListener("keydown",e=>{if($("#pm").hidden||!cm)return;if(e.key=="ArrowRight")cmove(1);if(e.key=="ArrowLeft")cmove(-1)});
+let sx=0;$("#pmain").addEventListener("touchstart",e=>{sx=e.touches[0].clientX},{passive:true});
+$("#pmain").addEventListener("touchend",e=>{const d=e.changedTouches[0].clientX-sx;if(cm&&Math.abs(d)>40)cmove(d<0?1:-1)});
+$("#pm").addEventListener("click",e=>{if(e.target.id=="pm")$("#pm").hidden=true});
+new IntersectionObserver((es,o)=>es.forEach(x=>{if(x.isIntersecting){x.target.classList.add("go");o.unobserve(x.target)}}),{threshold:.05}).observe($("#bg"));
 /* ----- Section rendez-vous : interactions + message WhatsApp ----- */
 document.addEventListener("click",e=>{const b=e.target.closest("#rdv button");if(!b)return;
 document.querySelectorAll("#rdv .bad").forEach(x=>x.classList.remove("bad"));
