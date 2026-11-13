@@ -1043,7 +1043,7 @@ function openP(p){cp=p;pv=1;const t=T[L];$("#pmt").innerHTML=`<h3>${p.brand}</h3
 function pmain(){const k=pk(cp);$("#pmain").dataset.img=k+"-"+pv;$("#pmain").innerHTML="";$("#pth").innerHTML=[1,2,3].map(n=>`<button aria-pressed="${n==pv}" data-pt="${n}"><div data-img="${k}-${n}" style="position:absolute;inset:0;border-radius:0"></div></button>`).join("");fill()}
 async function share(){const d={title:cp.brand+" "+cp.name,text:cp.brand+" "+cp.name,url:location.href.split("#")[0]};try{if(navigator.share)await navigator.share(d);else{await navigator.clipboard.writeText(d.url);$("#psh").textContent=T[L].cp}}catch(e){}}
 /* ===== COLLECTIONS : modèles regroupés par photos (positions) ===== */
-const COLL={femme:[5,4,3,3,3,3,3,3,3,3,3,2],homme:[5,3,3,3,3,3,3,3,4,5]}; // nb de photos par modèle
+const COLL={femme:[5,4,3,3,3,3,3,3,3,3,3,3,3,3,4,3,3,3],homme:[5,3,3,3,3,3,3,3,4,5]}; // nb de photos par modèle
 const cimg=(g,n,p)=>`assets/images/products/collection/${g}-${String(n).padStart(2,"0")}-${p}.webp`;
 const CL=[].concat(...Object.keys(COLL).map(g=>COLL[g].map((c,i)=>({g,n:i+1,c}))));
 let kf="all",cm=null,ci=0;
